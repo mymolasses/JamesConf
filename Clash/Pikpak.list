@@ -15,13 +15,13 @@ DOMAIN-KEYWORD,ipify
 DOMAIN,prod.brass.cloud.cupronickel.goog
 DOMAIN,prod.zinc.cloud.cupronickel.goog
 
-#DOMAIN-SUFFIX,global.xiaomi.net
-#DOMAIN,pdc.micloud.xiaomi.net
-#DOMAIN-SUFFIX,intl.miui.com
-#DOMAIN-SUFFIX,global.xiaomi.com
-#DOMAIN,connect.intl.rom.miui.com
-#DOMAIN,jupiter.intl.sys.miui.com
-#DOMAIN,mmbiz.qpic.cn
-#IP-CIDR,47.74.0.0/16,no-resolve
-#IP-CIDR,47.241.0.0/16,no-resolve
-#IP-CIDR,161.117.0.0/16,no-resolve
+DOMAIN-SUFFIX,global.xiaomi.net
+DOMAIN,pdc.micloud.xiaomi.net
+DOMAIN-SUFFIX,intl.miui.com
+DOMAIN-SUFFIX,global.xiaomi.com
+DOMAIN,connect.intl.rom.miui.com
+DOMAIN,jupiter.intl.sys.miui.com
+DOMAIN,mmbiz.qpic.cn
+IP-CIDR,47.74.0.0/16,no-resolve
+IP-CIDR,47.241.0.0/16,no-resolve
+IP-CIDR,161.117.0.0/16,no-resolve
