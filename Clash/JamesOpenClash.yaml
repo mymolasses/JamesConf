@@ -1,0 +1,722 @@
+#---------------------------------------------------#
+# 配置文件需要放置在 $HOME/.config/clash/config.yml
+# 或者运行目录下的config.yml
+#---------------------------------------------------#
+
+
+# > 机场流量信息
+subscribe-url: https://sub.store/download/paoche
+
+# HTTP 代理端口
+port: 7890
+
+# SOCKS5 代理端口
+socks-port: 7891
+
+# Linux 和 macOS 的 redir 代理端口 (如需使用此功能，请取消注释)
+redir-port: 7892
+
+# 混合端口 HTTP和SOCKS5用一个端口
+mixed-port: 7893
+
+
+# 允许局域网的连接（可用来共享代理）
+allow-lan: true
+
+# 仅在将allow-lan设置为true时适用
+# #"*": 绑定所有IP地址
+# #192.168.122.11: 绑定单个IPv4地址
+# #"[aaaa::a8aa:ff:fe09:57d8]": 绑定单个IPv6地址
+bind-address: "*"
+ipv6: false
+
+# 规则模式：rule（规则） / global（全局代理）/ direct（全局直连）/ script (脚本)
+# mode: rule
+
+# 设置日志输出级别 (默认级别：silent，即不输出任何内容，以避免因日志内容过大而导致程序内存溢出）。
+# 5 个级别：silent / error / warning / info / debug。级别越高日志输出量越大，越倾向于调试，若需要请自行开启。
+log-level: debug
+
+# Clash 的 RESTful API
+external-controller: '127.0.0.1:9090'
+
+# 您可以将静态网页资源（如 clash-dashboard）放置在一个目录中，clash 将会服务于 `RESTful API/ui`
+# 参数应填写配置目录的相对路径或绝对路径。
+# http://127.0.0.1:9090/ui/#/
+# external-ui: folder
+# yacd面板：  https://github.com/haishanh/yacd
+# Razord面板：http://clash.razord.top/#/proxies
+# external-ui: dashboard
+
+# RESTful API 的口令 (可选)
+# secret: ""
+
+
+# 本地 SOCKS5 / HTTP(S) 服务认证
+# authentication:
+#  - "user1:pass1"
+#  - "user2:pass2"
+
+# 实验性功能 hosts, 支持通配符 (例如 *.clash.dev 甚至 *.foo.*.example.com)
+# 静态的域名 比 通配域名 具有更高的优先级 (foo.example.com 优先于 *.example.com)
+# 注意: hosts 在 fake-ip 模式下不生效
+#hosts:
+#   '*.clash.dev': 127.0.0.1
+#   'alpha.clash.dev': '::1'
+
+dns:
+  enable: true # 是否启用dns false
+  #enhanced-mode: redir-host # 模式：redir-host或fake-ip
+  #fake-ip-range: 198.18.0.1/16 #
+  #fake-ip-filter: # fake ip 白名单列表，如果你不知道这个参数的作用，请勿修改
+     #- '*.lan'
+     #- localhost.ptlogin2.qq.com
+  nameserver:
+     - 223.5.5.5 # 阿里DNS
+     - 114.114.114.114 # 114DNS
+     - https://doh.pub/dns-query
+     - https://dns.cloudflare.com/dns-query
+     - https://jp.tiar.app/dns-query
+     - tls://dot.tiar.app
+     - quic://dns.adguard.com:853
+
+
+proxies:
+
+# 服务器节点订阅
+proxy-providers:
+#   HK:
+#     type: http
+#     path: ./Provider/Proxy/Sub/HK.yaml
+#     url: https://dove.589669.xyz/all2clash?sub=https://sub.hotkids.me
+#     interval: 3600
+#     filter: '香港|HK|Hong Kong|🇭🇰'
+#     health-check: 
+#       enable: true
+#       url: http://www.gstatic.com/generate_204
+#       interval: 600
+#   TW:
+#     type: http
+#     path: ./Provider/Proxy/Sub/TW.yaml
+#     url: https://dove.589669.xyz/all2clash?sub=https://sub.hotkids.me
+#     interval: 3600
+#     filter: '台湾|TW'
+#     health-check: 
+#       enable: true
+#       url: http://www.gstatic.com/generate_204
+#       interval: 600
+
+  HK:
+    type: http
+    path: ./Provider/Proxy/Sub/HK.yaml
+    url: https://sub.store/download/paoche
+    interval: 3600
+    filter: '香港|HK|Hong Kong|🇭🇰'
+    health-check: 
+      enable: true
+      url: https://sub.store/download/collection/mix
+      interval: 600
+  TW:
+    type: http
+    path: ./Provider/Proxy/Sub/TW.yaml
+    url: https://sub.store/download/collection/mix
+    interval: 3600
+    filter: '台湾|TW|Taiwan'
+    health-check: 
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+  SG:
+    type: http
+    path: ./Provider/Proxy/Sub/SG.yaml
+    url: https://sub.store/download/collection/mix
+    interval: 3600
+    filter: '新加坡|狮城|SG|Singapore'
+    health-check: 
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+  JP:
+    type: http
+    path: ./Provider/Proxy/Sub/JP.yaml
+    url: https://sub.store/download/collection/mix
+    interval: 3600
+    filter: '日本|JP|Japan'
+    health-check: 
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+  US:
+    type: http
+    path: ./Provider/Proxy/Sub/US.yaml
+    url: https://sub.store/download/collection/mix
+    interval: 3600
+    filter: '美国|US|USA|America|United States|🇺🇸'
+    health-check: 
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+  SA:
+    type: http
+    path: ./Provider/Proxy/Sub/SA.yaml
+    url: https://sub.store/download/collection/mix
+    interval: 3600
+    filter: '阿根廷|AR|Argentina|巴西|智利|秘鲁|墨西哥|乌拉圭|哥斯达黎加|Perdu|Mexico|Costa Rica'
+    health-check: 
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+  TR:
+    type: http
+    path: ./Provider/Proxy/Sub/TR.yaml
+    url: https://sub.store/download/collection/mix
+    interval: 3600
+    filter: '土耳其|TR|Turkey'
+    health-check: 
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+  
+  UN:
+    type: http
+    path: ./Provider/Proxy/Sub/UN.yaml
+    url: https://sub.store/download/collection/mix
+    interval: 3600
+    health-check: 
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+
+proxy-groups:
+  - name: "节点选择"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
+    proxies:
+      - 手动切换
+      - 香港节点
+      - 台湾节点
+      - 狮城节点
+      - 日本节点
+      - 美国节点
+      
+  - name: "手动切换"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/UN.png
+    use:
+      - UN
+      
+  - name: "YouTube"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+    proxies:
+      - 美国节点
+      - 节点选择
+      - 狮城节点
+      - 台湾节点
+      
+  - name: "Netflix"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix_Letter.png
+    proxies:
+      - 台湾节点
+      - 狮城节点
+      - 日本节点
+      - 香港节点
+      - 美国节点
+      - 手动切换
+      
+  - name: "Disney"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Disney.png
+    proxies:
+      - 台湾节点
+      - 香港节点
+      - 日本节点
+      - 美国节点
+      
+  - name: "Telegram"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+    proxies:
+      - 香港节点
+      - 台湾节点
+      
+#  - name: "Setanta"
+#    type: select
+#    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/DAZN_1.png
+#    use:
+#      - WB
+      
+  - name: "LeaguePass"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/NBA.png
+    use:
+      - TR
+      
+  - name: "PrimeVideo"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Prime_Video_1.png
+    proxies:
+      - 台湾节点
+      - 美国节点
+      - 冷门节点
+      
+  - name: "StarPlus"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Star+.png
+    use:
+      - SA
+      
+  - name: "香港节点"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+    use:
+      - HK
+      
+  - name: "日本节点"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+    use:
+      - JP
+      
+  - name: "美国节点"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+    use:
+      - US
+ 
+  - name: "狮城节点"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+    use:
+      - SG
+      
+  - name: "台湾节点"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+    use:
+      - TW
+      
+  - name: "冷门节点"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AR.png
+    use:
+      - SA
+      
+  - name: "谷歌FCM"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google.png
+    proxies:
+      - 香港节点
+      - 台湾节点
+      - DIRECT
+      
+  - name: "国外媒体"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/StreamingSE.png
+    proxies:
+      - 香港节点
+      - 台湾节点
+      - 狮城节点
+      - 日本节点
+      - 美国节点
+      - 手动切换
+      
+  - name: "哔哩哔哩"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_2.png
+    proxies:
+      - 全球直连
+      - 台湾节点
+      - 香港节点
+
+  - name: "漏网之鱼"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
+    proxies:
+      - 节点选择
+      - DIRECT
+      - 香港节点
+      - 台湾节点
+      - 狮城节点
+      - 美国节点
+      
+  - name: "OneDrive"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/OneDrive.png
+    proxies:
+      - DIRECT
+      - 香港节点
+      - 手动切换
+      
+  - name: "Microsoft"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+    proxies:
+      - DIRECT
+      - 节点选择
+      - 美国节点
+      - 香港节点
+      
+  - name: "Apple"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_2.png
+    proxies:
+      - DIRECT
+      - 节点选择
+      - 美国节点
+      - 香港节点
+      - 台湾节点
+      - 日本节点
+      
+  - name: "游戏平台"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Steam.png
+    proxies:
+      - DIRECT
+      - 节点选择
+      - 美国节点
+      - 香港节点
+      
+  - name: "全球直连"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Direct.png
+    proxies:
+      - DIRECT
+      - 节点选择
+      
+  - name: "广告拦截"
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Reject.png
+    proxies:
+      - REJECT
+      - DIRECT
+
+# 关于 Rule Provider 请查阅：https://lancellc.gitbook.io/clash/clash-config-file/rule-provider
+
+rule-providers:
+# name: # Provider 名称
+#   type: http # http 或 file
+#   behavior: classical # 或 ipcidr、domain
+#   path: # 文件路径
+#   url: # 只有当类型为 HTTP 时才可用，您不需要在本地空间中创建新文件。
+#   interval: # 自动更新间隔，仅在类型为 HTTP 时可用
+
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    path: ./Provider/LocalAreaNetwork.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/LocalAreaNetwork.yaml
+    interval: 86400
+
+  UnBan:
+    type: http
+    behavior: classical
+    path: ./Provider/UnBan.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/UnBan.yaml
+    interval: 86400
+    
+  Pikpak:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/Pikpak.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/Pikpak.yaml
+    interval: 86400
+    
+
+  EmbyDirect:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/EmbyDirect.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/EmbyDirect.yaml
+    interval: 86400
+    
+  BanAD:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/Guard/BanAD.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml
+    interval: 86400
+
+  BanProgramAD:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/Guard/BanProgramAD.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanProgramAD.yaml
+    interval: 86400
+
+  PrimeVideo:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/PrimeVideo.yaml
+    url: https://raw.githubusercontent.com/HotKids/Rules/master/Clash/RuleSet/Prime%20Video.yaml
+    interval: 86400
+
+  GoogleFCM:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/GoogleFCM.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleFCM.yaml
+    interval: 86400
+    
+  TikTok:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/TikTok.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
+    interval: 86400
+
+  OneDrive:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/OneDrive.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OneDrive.yaml
+    interval: 86400
+
+  Microsoft:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/Microsoft.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml
+    interval: 86400
+
+  Apple:
+    type: http
+    behavior: classical
+    path: ./Provider/Ruleset/Apple.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Apple.yaml
+    interval: 86400
+    
+  Telegram:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/Telegram.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml
+    interval: 86400
+
+  Epic:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/Epic.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Epic.yaml
+    interval: 86400
+
+  Sony:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/Sony.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Sony.yaml
+    interval: 86400
+
+  Steam:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/Steam.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Steam.yaml
+    interval: 86400
+
+  YouTube:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/YouTube.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml
+    interval: 86400
+    
+  Emby:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/Emby.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/Emby.yaml
+    interval: 86400
+    
+  StreamingTW:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/StreamingTW.yaml
+    url: https://raw.githubusercontent.com/HotKids/Rules/master/Clash/RuleSet/Streaming_TW.yaml
+    interval: 86400
+    
+  StreamingJP:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/StreamingJP.yaml
+    url: https://raw.githubusercontent.com/HotKids/Rules/master/Clash/RuleSet/Streaming_JP.yaml
+    interval: 86400
+    
+  StreamingUS:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/StreamingUS.yaml
+    url: https://raw.githubusercontent.com/HotKids/Rules/master/Clash/RuleSet/Streaming_US.yaml
+    interval: 86400
+    
+#  Setanta:
+#    type: http
+#    behavior: classical
+#    path: ./Provider/RuleSet/Setanta.yaml
+#    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/Setanta.yaml
+#    interval: 86400    
+    
+  LeaguePass:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/LeaguePass.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/NBA.yaml
+    interval: 86400   
+    
+  StarPlus:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/StarPlus.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/StarPlus.yaml
+    interval: 86400
+    
+  Disney:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/Disney.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/Disney.yaml
+    interval: 86400
+    
+  Netflix:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/Netflix.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml
+    interval: 86400
+    
+  BilibiliHMT:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/BilibiliHMT.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/BilibiliHMT.yaml
+    interval: 86400
+    
+  Bilibili:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/Bilibili.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bilibili.yaml
+    interval: 86400
+    
+  ChinaMedia:
+    type: http
+    behavior: classical
+    path: ./Provider/ChinaMedia.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaMedia.yaml
+    interval: 86400
+    
+  ProxyMedia:
+    type: http
+    behavior: classical
+    path: ./Provider/ProxyMedia.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyMedia.yaml
+    interval: 86400
+    
+  HKDomain:
+    type: http
+    behavior: classical
+    path: ./Provider/Ruleset/HKDomain.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/HK.yaml
+    interval: 86400
+    
+  TWDomain:
+    type: http
+    behavior: classical
+    path: ./Provider/Ruleset/TWDomain.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/TW.yaml
+    interval: 86400
+    
+  USDomain:
+    type: http
+    behavior: classical
+    path: ./Provider/Ruleset/USDomain.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/US.yaml
+    interval: 86400
+    
+  ProxyGFWlist:
+    type: http
+    behavior: classical
+    path: ./Provider/ProxyGFWlist.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml
+    interval: 86400
+    
+  ChinaDomain:
+    type: http
+    behavior: classical
+    path: ./Provider/ChinaDomain.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml
+    interval: 86400
+    
+  ChinaCompanyIp:
+    type: http
+    behavior: ipcidr
+    path: ./Provider/ChinaCompanyIp.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml
+    interval: 86400
+    
+  Download:
+    type: http
+    behavior: classical
+    path: ./Provider/Download.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Download.yaml
+    interval: 86400
+    
+
+# 规则
+rules:
+  # Unbreak
+  - RULE-SET,LocalAreaNetwork,全球直连
+  - RULE-SET,UnBan,全球直连
+  - RULE-SET,Pikpak,节点选择
+  - RULE-SET,EmbyDirect,全球直连
+
+  # AdBlock
+  - RULE-SET,BanAD,广告拦截
+  - RULE-SET,BanProgramAD,广告拦截
+  
+  # FCM
+  - RULE-SET,GoogleFCM,谷歌FCM
+  
+  # TikTok
+  - RULE-SET,TikTok,台湾节点
+  
+  # Microsoft & Apple
+  - RULE-SET,OneDrive,OneDrive
+  - RULE-SET,Microsoft,Microsoft
+  - RULE-SET,Apple,Apple
+  
+  # Telegram
+  - RULE-SET,Telegram,Telegram
+
+  # Game
+  - RULE-SET,Epic,游戏平台
+  - RULE-SET,Sony,游戏平台
+  - RULE-SET,Steam,游戏平台
+  # Streaming
+  - RULE-SET,YouTube,YouTube
+  - RULE-SET,Emby,美国节点
+ #  - RULE-SET,Setanta,Setanta
+  - RULE-SET,LeaguePass,LeaguePass
+  - RULE-SET,PrimeVideo,PrimeVideo
+  - RULE-SET,StreamingTW,台湾节点
+  - RULE-SET,StreamingJP,日本节点
+  - RULE-SET,StreamingUS,美国节点
+  - RULE-SET,Disney,Disney
+  - RULE-SET,StarPlus,StarPlus
+  - RULE-SET,Netflix,Netflix
+  - RULE-SET,BilibiliHMT,哔哩哔哩
+  - RULE-SET,Bilibili,哔哩哔哩
+  
+  - RULE-SET,ChinaMedia,全球直连
+  - RULE-SET,ProxyMedia,国外媒体
+  - RULE-SET,USDomain,美国节点
+  - RULE-SET,TWDomain,台湾节点
+  - RULE-SET,HKDomain,香港节点
+  - RULE-SET,ProxyGFWlist,节点选择
+  - RULE-SET,ChinaDomain,全球直连
+  - RULE-SET,ChinaCompanyIp,全球直连
+  - RULE-SET,Download,全球直连
+  - GEOIP,CN,全球直连
+
+  - MATCH,漏网之鱼
