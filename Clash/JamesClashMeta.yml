@@ -24,6 +24,7 @@ hosts:
   dl.l.google.com: 180.163.151.161
 dns:
   enable: true
+  prefer-h3: true # 开启 DoH 支持 HTTP/3，将并发尝试
   listen: 0.0.0.0:7874
   ipv6: false
   default-nameserver:
