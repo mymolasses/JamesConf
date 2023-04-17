@@ -122,7 +122,7 @@ proxy-providers:
   HK:
     type: http
     path: ./Provider/Proxy/Sub/HK.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange111..
+    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
     interval: 3600
     filter: '港|HK|Hong Kong|Macau'
     health-check: 
@@ -132,7 +132,7 @@ proxy-providers:
   TW:
     type: http
     path: ./Provider/Proxy/Sub/TW.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange111..
+    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
     interval: 3600
     filter: '台|新北|彰化|TW|Taiwan'
     health-check: 
@@ -142,7 +142,7 @@ proxy-providers:
   US:
     type: http
     path: ./Provider/Proxy/Sub/US.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange111..
+    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
     interval: 3600
     filter: '美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States'
     health-check: 
@@ -152,7 +152,7 @@ proxy-providers:
   JP:
     type: http
     path: ./Provider/Proxy/Sub/JP.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange111..
+    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
     interval: 3600
     filter: '日本|JP|Japan'
     health-check: 
@@ -162,7 +162,7 @@ proxy-providers:
   KR:
     type: http
     path: ./Provider/Proxy/Sub/SG.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange111..
+    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
     interval: 3600
     filter: 'KR|Korea|KOR|首尔|韩|韓'
     health-check: 
@@ -174,7 +174,7 @@ proxy-providers:
   SA:
     type: http
     path: ./Provider/Proxy/Sub/SA.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange111..
+    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
     interval: 3600
     filter: 'Mexico|Argentina|Chile|Costa Rica|阿根廷|巴西|智利|Philippines|India|Turkey|Egypt|菲律宾|印度|土耳其|德国|埃及|Germany|Bulgaria|Spain|Netherlands|United Kingdom|保加利亚|西班牙|荷兰|英国a'
     health-check: 
@@ -184,7 +184,7 @@ proxy-providers:
   TR:
     type: http
     path: ./Provider/Proxy/Sub/TR.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange111..
+    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
     interval: 3600
     filter: '土耳其|TR|Turkey'
     health-check: 
@@ -195,7 +195,7 @@ proxy-providers:
   UN:
     type: http
     path: ./Provider/Proxy/Sub/UN.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange111..
+    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
     interval: 3600
     health-check: 
       enable: true
