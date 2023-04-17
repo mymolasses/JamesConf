@@ -449,7 +449,7 @@ proxy-groups:
 rule-providers:
 # name: # Provider 名称
 #   type: http # http 或 file
-#   behavior: classical # 或 ipcidr、domain
+#   behavior: classical # 或 ipcidr、  - DOMAIN
 #   path: # 文件路径
 #   url: # 只有当类型为 HTTP 时才可用，您不需要在本地空间中创建新文件。
 #   interval: # 自动更新间隔，仅在类型为 HTTP 时可用
@@ -472,7 +472,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./Provider/RuleSet/Pikpak.yaml
-    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/Pikpak.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/JamesConf/main/Clash/Providers/Pikpak.yaml
     interval: 86400
     
 
@@ -480,7 +480,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./Provider/RuleSet/EmbyDirect.yaml
-    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/EmbyDirect.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/JamesConf/main/Clash/Providers/EmbyDirect.yaml
     interval: 86400
     
   BanAD:
@@ -497,10 +497,10 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanProgramAD.yaml
     interval: 86400
 
-  📺 PrimeVideo:
+  PrimeVideo:
     type: http
     behavior: classical
-    path: ./Provider/RuleSet/📺 PrimeVideo.yaml
+    path: ./Provider/RuleSet/PrimeVideo.yaml
     url: https://raw.githubusercontent.com/HotKids/Rules/master/Clash/RuleSet/Prime%20Video.yaml
     interval: 86400
 
@@ -510,40 +510,47 @@ rule-providers:
     path: ./Provider/RuleSet/GoogleFCM.yaml
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleFCM.yaml
     interval: 86400
+
+  GoogleCN:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/GoogleCN.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleCN.yaml
+    interval: 86400
+
+  SteamCN:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/SteamCN.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/SteamCN.yaml
+    interval: 86400
+
+  OneDrive:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/OneDrive.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OneDrive.yaml
+    interval: 86400
+
+  Microsoft:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/Microsoft.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml
+    interval: 86400
+
+  Apple:
+    type: http
+    behavior: classical
+    path: ./Provider/Ruleset/Apple.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Apple.yaml
+    interval: 86400
     
-  TikTok:
+  Telegram:
     type: http
     behavior: classical
-    path: ./Provider/RuleSet/TikTok.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
-    interval: 86400
-
-  Ⓜ️ Microsoft:
-    type: http
-    behavior: classical
-    path: ./Provider/RuleSet/Ⓜ️ Microsoft.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Ⓜ️ Microsoft.yaml
-    interval: 86400
-
-  Ⓜ️ Microsoft:
-    type: http
-    behavior: classical
-    path: ./Provider/RuleSet/Ⓜ️ Microsoft.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Ⓜ️ Microsoft.yaml
-    interval: 86400
-
-  🍎 Apple:
-    type: http
-    behavior: classical
-    path: ./Provider/Ruleset/🍎 Apple.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/🍎 Apple.yaml
-    interval: 86400
-    
-  📲 Telegram:
-    type: http
-    behavior: classical
-    path: ./Provider/RuleSet/📲 Telegram.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/📲 Telegram.yaml
+    path: ./Provider/RuleSet/Telegram.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml
     interval: 86400
 
   Epic:
@@ -567,11 +574,11 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Steam.yaml
     interval: 86400
 
-  📹 Youtube:
+  Youtube:
     type: http
     behavior: classical
-    path: ./Provider/RuleSet/📹 Youtube.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/📹 Youtube.yaml
+    path: ./Provider/RuleSet/Youtube.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Youtube.yaml
     interval: 86400
     
   Emby:
@@ -585,58 +592,87 @@ rule-providers:
     type: http
     behavior: classical
     path: ./Provider/RuleSet/StreamingTW.yaml
-    url: https://raw.githubusercontent.com/HotKids/Rules/master/Clash/RuleSet/Streaming_TW.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/JamesConf/main/Clash/Providers/Streaming_TW.yaml
     interval: 86400
-    
+
+  HBOGO:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/HBOGO.yaml
+    url: https://raw.githubusercontent.com/HotKids/Rules/master/Clash/RuleSet/HBO_Go.yaml
+    interval: 86400
+
+  Line:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/Line.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Line/Line.yaml
+    interval: 86400
+
+  Facebook:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/Facebook.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml
+    interval: 86400
+
   StreamingJP:
     type: http
     behavior: classical
     path: ./Provider/RuleSet/StreamingJP.yaml
-    url: https://raw.githubusercontent.com/HotKids/Rules/master/Clash/RuleSet/Streaming_JP.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/JamesConf/main/Clash/Providers/Streaming_JP.yaml
     interval: 86400
     
   StreamingUS:
     type: http
     behavior: classical
     path: ./Provider/RuleSet/StreamingUS.yaml
-    url: https://raw.githubusercontent.com/HotKids/Rules/master/Clash/RuleSet/Streaming_US.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/JamesConf/main/Clash/Providers/Streaming_US.yaml
     interval: 86400
     
-#  Setanta:
+    
+#  LeaguePass:
 #    type: http
 #    behavior: classical
-#    path: ./Provider/RuleSet/Setanta.yaml
-#    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/Setanta.yaml
-#    interval: 86400    
+#    path: ./Provider/RuleSet/LeaguePass.yaml
+#    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/NBA.yaml
+#    interval: 86400   
     
-  LeaguePass:
+  StarPlus:
     type: http
     behavior: classical
-    path: ./Provider/RuleSet/LeaguePass.yaml
-    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/NBA.yaml
-    interval: 86400   
-    
-  🏀 StarPlus:
-    type: http
-    behavior: classical
-    path: ./Provider/RuleSet/🏀 StarPlus.yaml
-    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/🏀 StarPlus.yaml
+    path: ./Provider/RuleSet/StarPlus.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/JamesConf/main/Clash/Providers/StarPlus.yaml
     interval: 86400
-    
-  🎥 Netflix:
+
+  Porn:
     type: http
     behavior: classical
-    path: ./Provider/RuleSet/🎥 Netflix.yaml
-    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/🎥 Netflix.yaml
+    path: ./Provider/RuleSet/Porn.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/JamesConf/main/Clash/Providers/Porn.yaml
     interval: 86400
-    
-  🎥 Netflix:
+
+  Pornhub:
     type: http
     behavior: classical
-    path: ./Provider/RuleSet/🎥 Netflix.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/🎥 Netflix.yaml
+    path: ./Provider/RuleSet/Pornhub.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/JamesConf/main/Clash/Providers/Pornhub.yaml
     interval: 86400
-    
+
+  DisneyPlus:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/DisneyPlus.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/JamesConf/main/Clash/Providers/DisneyPlus.yaml
+    interval: 86400
+
+  Netflix:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/Netflix.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml
+    interval: 86400
+ 
   BilibiliHMT:
     type: http
     behavior: classical
@@ -665,25 +701,32 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyMedia.yaml
     interval: 86400
     
-  HKDomain:
+  HK:
     type: http
     behavior: classical
-    path: ./Provider/Ruleset/HKDomain.yaml
-    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/HK.yaml
+    path: ./Provider/Ruleset/HK.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/JamesConf/main/Clash/Providers/HK.yaml
+    interval: 86400
+
+  Whatsapp:
+    type: http
+    behavior: classical
+    path: ./Provider/Ruleset/Whatsapp.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Whatsapp/Whatsapp.yaml
     interval: 86400
     
-  TWDomain:
+  TW:
     type: http
     behavior: classical
-    path: ./Provider/Ruleset/TWDomain.yaml
-    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/TW.yaml
+    path: ./Provider/Ruleset/TW.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/JamesConf/main/Clash/Providers/TW.yaml
     interval: 86400
     
-  USDomain:
+  US:
     type: http
     behavior: classical
-    path: ./Provider/Ruleset/USDomain.yaml
-    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/US.yaml
+    path: ./Provider/Ruleset/US.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/JamesConf/main/Clash/Providers/US.yaml
     interval: 86400
     
   ProxyGFWlist:
@@ -693,11 +736,11 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml
     interval: 86400
     
-  ChinaDomain:
+  ChinaDOMAIN:
     type: http
     behavior: classical
-    path: ./Provider/ChinaDomain.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml
+    path: ./Provider/ChinaDOMAIN.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDOMAIN.yaml
     interval: 86400
     
   ChinaCompanyIp:
@@ -729,44 +772,50 @@ rules:
   
   # FCM
   - RULE-SET,GoogleFCM,📢 FCM
+  - RULE-SET,GoogleCN,🎯 Direct
+
+  - RULE-SET,SteamCN,🎯 Direct
   
-  # TikTok
-  - RULE-SET,TikTok,🇨🇳 TW
-  
-  # Microsoft & Apple
+  #Microsoft & Apple
   - RULE-SET,OneDrive,Ⓜ️ Microsoft
   - RULE-SET,Microsoft,Ⓜ️ Microsoft
   - RULE-SET,Apple,🍎 Apple
   
-  # 📲 Telegram
+  # Telegram
   - RULE-SET,Telegram,📲 Telegram
 
   # Game
   - RULE-SET,Epic,🎮 Game
   - RULE-SET,Sony,🎮 Game
   - RULE-SET,Steam,🎮 Game
+
   # Streaming
   - RULE-SET,Youtube,📹 Youtube
   - RULE-SET,Emby,🇺🇲 US
- #  - RULE-SET,Setanta,Setanta
-  - RULE-SET,LeaguePass,LeaguePass
+#  - RULE-SET,LeaguePass,LeaguePass
   - RULE-SET,PrimeVideo,📺 PrimeVideo
   - RULE-SET,StreamingTW,🇨🇳 TW
+  - RULE-SET,HBOGO,🇨🇳 TW
+  - RULE-SET,Line,🇨🇳 TW
+  - RULE-SET,Facebook,🇨🇳 TW
   - RULE-SET,StreamingJP,🇯🇵 JP
   - RULE-SET,StreamingUS,🇺🇲 US
-  - RULE-SET,Netflix,🎥 Netflix
   - RULE-SET,StarPlus,🏀 StarPlus
+  - RULE-SET,Porn,🇺🇲 US
+  - RULE-SET,Pornhub,🇺🇲 US
+  - RULE-SET,DisneyPlus,🎥 Netflix
   - RULE-SET,Netflix,🎥 Netflix
   - RULE-SET,BilibiliHMT,📺 BiliBili
   - RULE-SET,Bilibili,📺 BiliBili
   
   - RULE-SET,ChinaMedia,🎯 Direct
   - RULE-SET,ProxyMedia,🌍 GlobalMedia
-  - RULE-SET,USDomain,🇺🇲 US
-  - RULE-SET,TWDomain,🇨🇳 TW
-  - RULE-SET,HKDomain,🇭🇰 HK
+  - RULE-SET,US,🇺🇲 US
+  - RULE-SET,TW,🇨🇳 TW
+  - RULE-SET,Whatsapp,🇭🇰 HK
   - RULE-SET,ProxyGFWlist,🚀 Proxy
-  - RULE-SET,ChinaDomain,🎯 Direct
+  - RULE-SET,HK,🇭🇰 HK
+  - RULE-SET,ChinaDOMAIN,🎯 Direct
   - RULE-SET,ChinaCompanyIp,🎯 Direct
   - RULE-SET,Download,🎯 Direct
   - GEOIP,CN,🎯 Direct
