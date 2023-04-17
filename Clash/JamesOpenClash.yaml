@@ -2,23 +2,15 @@
 # 配置文件需要放置在 $HOME/.config/clash/config.yml
 # 或者运行目录下的config.yml
 #---------------------------------------------------#
-
-
-# > 机场流量信息
-subscribe-url: https://sub.store/download/paoche
-
-# HTTP 代理端口
+# 混合端口 HTTP和SOCKS5用一个端口
 port: 7890
 
-# SOCKS5 代理端口
-socks-port: 7891
-
-# Linux 和 macOS 的 redir 代理端口 (如需使用此功能，请取消注释)
 redir-port: 7892
 
-# 混合端口 HTTP和SOCKS5用一个端口
 mixed-port: 7893
 
+# Linux 和 macOS 的 redir 代理端口 (如需使用此功能，请取消注释)
+# redir-port: 7892
 
 # 允许局域网的连接（可用来共享代理）
 allow-lan: true
@@ -31,7 +23,7 @@ bind-address: "*"
 ipv6: false
 
 # 规则模式：rule（规则） / global（全局代理）/ direct（全局直连）/ script (脚本)
-# mode: rule
+mode: rule
 
 # 设置日志输出级别 (默认级别：silent，即不输出任何内容，以避免因日志内容过大而导致程序内存溢出）。
 # 5 个级别：silent / error / warning / info / debug。级别越高日志输出量越大，越倾向于调试，若需要请自行开启。
@@ -60,25 +52,156 @@ external-controller: '127.0.0.1:9090'
 # 实验性功能 hosts, 支持通配符 (例如 *.clash.dev 甚至 *.foo.*.example.com)
 # 静态的域名 比 通配域名 具有更高的优先级 (foo.example.com 优先于 *.example.com)
 # 注意: hosts 在 fake-ip 模式下不生效
-#hosts:
-#   '*.clash.dev': 127.0.0.1
-#   'alpha.clash.dev': '::1'
+hosts:
+  # Firebase Cloud Messaging
+  'mtalk.google.com': 108.177.125.188
+  # Google Dl
+  'dl.google.com': 180.163.151.161
+  'dl.l.google.com': 180.163.151.161
 
 dns:
   enable: true # 是否启用dns false
-  #enhanced-mode: redir-host # 模式：redir-host或fake-ip
-  #fake-ip-range: 198.18.0.1/16 #
+#  enhanced-mode: redir-host # 模式：redir-host或fake-ip
+  listen: 0.0.0.0:7874 #
   #fake-ip-filter: # fake ip 白名单列表，如果你不知道这个参数的作用，请勿修改
      #- '*.lan'
      #- localhost.ptlogin2.qq.com
   nameserver:
-     - 223.5.5.5 # 阿里DNS
-     - 114.114.114.114 # 114DNS
-     - https://doh.pub/dns-query
-     - https://dns.cloudflare.com/dns-query
-     - https://jp.tiar.app/dns-query
-     - tls://dot.tiar.app
-     - quic://dns.adguard.com:853
+    - 114.114.114.114
+    - 223.6.6.6
+    - 119.29.29.29
+  fallback:
+    - https://dns.cloudflare.com/dns-query
+    - tls://dot.tiar.app
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    domain:
+      - '+.google.+'
+      - '+.googleapis.com'
+      - '+.googlevideo.com'
+      - '+.gstatic.cn'
+      - '+.gstatic.com'
+      - '+.gvt1.com'
+      - '+.gvt2.com'
+      - '+.recaptcha.net'
+      - '+.twimg.com'
+      - '+.twitter.com'
+      - '+.youtube.com'
+      - '+.ytimg.com'
+      - 'twitter.com'
+      - 't.co'
+      - 't.me'
+      - 'telegra.ph'
+      - 'youtu.be'
+  # Lookup domains via specific nameservers
+  nameserver-policy:
+    # Alibaba
+    '*.alibaba.cn': '223.6.6.6'
+    '*.alibaba.com.cn': '223.6.6.6'
+    '*.china.alibaba.com': '223.6.6.6'
+    '*.1688.com': '223.6.6.6'
+    '*.taobao.com': '223.6.6.6'
+    '*.tbcache.com': '223.6.6.6'
+    '*.tmall.com': '223.6.6.6'
+    '*.alicdn.com': '223.6.6.6'
+    '*.aliyundrive.com': '223.6.6.6'
+    '*.aliyun.*': '223.6.6.6'
+    '*.aliyuncdn.*': '223.6.6.6'
+    '*.aliyuncs.com': '223.6.6.6'
+    '*.aliyundunwaf.com': '223.6.6.6'
+    '*.aliapp.com': '223.6.6.6'
+    '*.aliapp.org': '223.6.6.6'
+    '*.alibabausercontent.com': '223.6.6.6'
+    '*.mmstat.com': '223.6.6.6'
+    'tb.cn': '223.6.6.6'
+    
+# tun:
+ #  enable: true
+#   stack: system
+#   dns-hijack:
+ #    - 198.18.0.2:53
+
+
+# 1. clash DNS 请求逻辑：
+#   (1) 当访问一个域名时， nameserver 与 fallback 列表内的所有服务器并发请求，得到域名对应的 IP 地址。
+#   (2) clash 将选取 nameserver 列表内，解析最快的结果。
+#   (3) 若解析结果中，IP 地址属于 国外，那么 clash 将选择 fallback 列表内，解析最快的结果。
+#
+#   因此，我在 nameserver 和 fallback 内都放置了无污染、解析速度较快的国内 DNS 服务器，以达到最快的解析速度。
+#   但是 fallback 列表内服务器会用在解析境外网站，为了结果绝对无污染，我仅保留了支持 DoT/DoH 的两个服务器。
+#
+# 2. clash DNS 配置注意事项：
+#   (1) 如果您为了确保 DNS 解析结果无污染，请仅保留列表内以 tls:// 或 https:// 开头的 DNS 服务器，但是通常对于国内域名没有必要。
+#   (2) 如果您不在乎可能解析到污染的结果，更加追求速度。请将 nameserver 列表的服务器插入至 fallback 列表内，并移除重复项。
+#
+# 3. 关于 DNS over HTTPS (DoH) 和 DNS over TLS (DoT) 的选择：
+#   对于两项技术双方各执一词，而且会无休止的争论，各有利弊。各位请根据具体需求自行选择，但是配置文件内默认启用 DoT，因为目前国内没有封锁或管制。
+#   DoH: 以 https:// 开头的 DNS 服务器。拥有更好的伪装性，且几乎不可能被运营商或网络管理封锁，但查询效率和安全性可能略低。
+#   DoT: 以 tls:// 开头的 DNS 服务器。拥有更高的安全性和查询效率，但端口有可能被管制或封锁。
+#   若要了解更多关于 DoH/DoT 相关技术，请自行查阅规范文档。
+
+# 代理组
+# 下面这3个不要引到订阅里去 要不会出错
+# Will be ignored after profile selection
+#proxies:
+#  - name: Shadowsocks
+#    type: socks5
+#    server: 127.0.0.1
+#    port: 1080
+#proxy-groups:
+#  - name: Proxy
+#    type: select
+#    proxies:
+#      - Shadowsocks
+#rules:
+#  - 'MATCH,DIRECT'
+
+# Clash for Windows
+# Proxies module latency test settings
+cfw-latency-timeout: 3000
+cfw-latency-url: http://www.gstatic.com/generate_204
+
+
+#自定义配置目录
+#cfw-profiles-path: 'C:\Users\Administrator\.config\clash\profiles'
+
+# 打断连接
+# Identify strategy of breaking connections after switching to a new proxy/profile/mode
+# Options for proxy: none, chain(proxy group in connection chains), all
+# Options for profile: true, false
+# Options for mode: true, false
+cfw-conn-break-strategy:
+  proxy: chain # none/chain/all
+  profile: true # true/false
+  mode: true # true/false
+
+# 自定义状态栏图标
+#cfw-tray-icon:
+#default: .\resources\static\imgs\logo_64.png        # 默认图标
+#system-proxy-on: .\resources\static\imgs\custom.ico   # 开启系统代理后图标
+
+# 自定义字体
+#cfw-font-family: "Noto Sans TC"   # 系统中存在的字体
+
+# 自定义请求头
+#cfw-http-headers:
+  #token: "123456"
+  #cfw-version: "0.9.11"
+
+# 自定义节点排序
+# 可选参数：
+#  default：按配置文件定义节点顺序
+#  latency：按节点延迟升序排列
+#  alphabet：按节点名称字母表排列
+# Sort proxies in Proxies module by default/latency/alphabet
+cfw-proxies-order: default
+
+
+# 系统代理跳过列表 cfw-bypass
+# System proxy will ignore these domains(or ipnet)
+# 系统代理跳过列表-备份的，不起作用，
+# 使用时可以将cfw-bypass-bak与cfw-bypass内容互换
 
 
 proxies:
@@ -95,16 +218,6 @@ proxy-providers:
 #       enable: true
 #       url: http://www.gstatic.com/generate_204
 #       interval: 600
-#   TW:
-#     type: http
-#     path: ./Provider/Proxy/Sub/TW.yaml
-#     url: https://dove.589669.xyz/all2clash?sub=https://sub.hotkids.me
-#     interval: 3600
-#     filter: '台湾|TW'
-#     health-check: 
-#       enable: true
-#       url: http://www.gstatic.com/generate_204
-#       interval: 600
 
   HK:
     type: http
@@ -114,7 +227,7 @@ proxy-providers:
     filter: '香港|HK|Hong Kong|🇭🇰'
     health-check: 
       enable: true
-      url: https://sub.store/download/collection/mix
+      url: http://www.gstatic.com/generate_204
       interval: 600
   TW:
     type: http
