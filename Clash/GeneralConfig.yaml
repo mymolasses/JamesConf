@@ -266,7 +266,7 @@ proxy-providers:
     path: ./Provider/Proxy/Sub/SA.yaml
     url: https://sub.store/download/collection/mix
     interval: 3600
-    filter: '阿根廷|AR|Argentina|巴西|智利|秘鲁|墨西哥|乌拉圭|哥斯达黎加|Perdu|Mexico|Costa Rica'
+    filter: 'Mexico|Argentina|Chile|Costa Rica|阿根廷|巴西|智利|Philippines|India|Turkey|Egypt|菲律宾|印度|土耳其|德国|埃及|Germany|Bulgaria|Spain|Netherlands|United Kingdom|保加利亚|西班牙|荷兰|英国a'
     health-check: 
       enable: true
       url: http://www.gstatic.com/generate_204
