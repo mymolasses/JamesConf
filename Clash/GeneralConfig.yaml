@@ -214,7 +214,7 @@ proxy-providers:
     path: ./Provider/Proxy/Sub/HK.yaml
     url: https://sub.store/download/paoche
     interval: 3600
-    filter: '香港|HK|Hong Kong|🇭🇰'
+    filter: '港|HK|Hong Kong|Macau'
     health-check: 
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -224,17 +224,17 @@ proxy-providers:
     path: ./Provider/Proxy/Sub/TW.yaml
     url: https://sub.store/download/collection/mix
     interval: 3600
-    filter: '台湾|TW|Taiwan'
+    filter: '台|新北|彰化|TW|Taiwan'
     health-check: 
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 600
-  SG:
+  US:
     type: http
-    path: ./Provider/Proxy/Sub/SG.yaml
+    path: ./Provider/Proxy/Sub/US.yaml
     url: https://sub.store/download/collection/mix
     interval: 3600
-    filter: '新加坡|狮城|SG|Singapore'
+    filter: '美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States'
     health-check: 
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -249,16 +249,18 @@ proxy-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 600
-  US:
+  KR:
     type: http
-    path: ./Provider/Proxy/Sub/US.yaml
+    path: ./Provider/Proxy/Sub/SG.yaml
     url: https://sub.store/download/collection/mix
     interval: 3600
-    filter: '美国|US|USA|America|United States|🇺🇸'
+    filter: 'KR|Korea|KOR|首尔|韩|韓'
     health-check: 
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 600
+      
+   
   SA:
     type: http
     path: ./Provider/Proxy/Sub/SA.yaml
@@ -295,11 +297,12 @@ proxy-groups:
     type: select
     proxies:
       - ✈️ Server
-      - 🇭🇰 HK
       - 🇨🇳 TW
-      - 🇸🇬 SG
-      - 🇯🇵 JP
       - 🇺🇲 US
+      - 🇭🇰 HK
+      - 🇯🇵 JP
+      - 🇸🇬 SG
+      - 🇰🇷 KR
       
   - name: "✈️ Server"
     type: select
@@ -322,6 +325,7 @@ proxy-groups:
       - 🇯🇵 JP
       - 🇭🇰 HK
       - 🇺🇲 US
+      - 🇰🇷 KR
       - ✈️ Server
       
   - name: "📲 Telegram"
@@ -329,6 +333,7 @@ proxy-groups:
     proxies:
       - 🇭🇰 HK
       - 🇨🇳 TW
+      - 🇯🇵 JP
       
   - name: "📺 PrimeVideo"
     type: select
@@ -342,6 +347,16 @@ proxy-groups:
     use:
       - SA
       
+  - name: "🇨🇳 TW"
+    type: select
+    use:
+      - TW
+      
+  - name: "🇺🇲 US"
+    type: select
+    use:
+      - US
+      
   - name: "🇭🇰 HK"
     type: select
     use:
@@ -351,21 +366,16 @@ proxy-groups:
     type: select
     use:
       - JP
-      
-  - name: "🇺🇲 US"
-    type: select
-    use:
-      - US
- 
+
   - name: "🇸🇬 SG"
     type: select
     use:
       - SG
       
-  - name: "🇨🇳 TW"
+  - name: "🇰🇷 KR"
     type: select
     use:
-      - TW
+      - KR
       
   - name: "❄️ Rare"
     type: select
@@ -387,6 +397,7 @@ proxy-groups:
       - 🇸🇬 SG
       - 🇯🇵 JP
       - 🇺🇲 US
+      - 🇰🇷 KR
       - ✈️ Server
       
   - name: "📺 BiliBili"
@@ -403,8 +414,9 @@ proxy-groups:
       - DIRECT
       - 🇭🇰 HK
       - 🇨🇳 TW
-      - 🇸🇬 SG
       - 🇺🇲 US
+      - 🇸🇬 SG
+      - 🇰🇷 KR
       
   - name: "Ⓜ️ Microsoft"
     type: select
