@@ -12,8 +12,6 @@ DOMAIN,static.mypikpak.com
 DOMAIN,config.mypikpak.com
 DOMAIN,rcv5-sp.mypikpak.com
 DOMAIN-KEYWORD,ipify
-DOMAIN,prod.brass.cloud.cupronickel.goog
-DOMAIN,prod.zinc.cloud.cupronickel.goog
 
 DOMAIN-SUFFIX,global.xiaomi.net
 DOMAIN,pdc.micloud.xiaomi.net
