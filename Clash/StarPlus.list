@@ -10,6 +10,8 @@ DOMAIN,star.content.edge.bamgrid.com
 DOMAIN,star.playback.edge.bamgrid.com
 DOMAIN,bam-sdk-configs.bamgrid.com
 DOMAIN,cnbl-cdn.bamgrid.com
+DOMAIN,pcs.bamgrid.com
+DOMAIN,vpe-static.bamgrid.com
 DOMAIN,sdk.iad-03.braze.com
 #DOMAIN,cdn.registerdisney.go.com
 #static-assets.bamgrid.com
