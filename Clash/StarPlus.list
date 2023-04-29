@@ -14,7 +14,7 @@ DOMAIN,pcs.bamgrid.com
 DOMAIN,vpe-static.bamgrid.com
 DOMAIN,sdk.iad-03.braze.com
 #DOMAIN,cdn.registerdisney.go.com
-#static-assets.bamgrid.com
+DOMAIN,static-assets.bamgrid.com
 #prod-ripcut-delivery.disney-plus.net
 // 此条与 Disney+ 共用，主要是加载海报，可注释。注释后打开 App 会提示账号漫游，但不影响正常使用。
 // DOMAIN,prod-ripcut-delivery.disney-plus.net
