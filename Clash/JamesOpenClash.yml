@@ -203,6 +203,9 @@ cfw-proxies-order: default
 # 系统代理跳过列表-备份的，不起作用，
 # 使用时可以将cfw-bypass-bak与cfw-bypass内容互换
 
+proxies:
+
+# 服务器节点订阅
 proxy-providers:
 
   HK:
@@ -245,6 +248,17 @@ proxy-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 600
+  SG:
+    type: http
+    path: ./Provider/Proxy/Sub/SG.yaml
+    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
+    interval: 3600
+    filter: '新加坡|坡|狮城|SG|Singapore'
+    health-check: 
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+      
   KR:
     type: http
     path: ./Provider/Proxy/Sub/SG.yaml
@@ -267,6 +281,7 @@ proxy-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 600
+      
   TR:
     type: http
     path: ./Provider/Proxy/Sub/TR.yaml
@@ -586,7 +601,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./Provider/RuleSet/Youtube.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Youtube.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml
     interval: 86400
     
   Emby:
