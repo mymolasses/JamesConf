@@ -1,8 +1,8 @@
 payload:
-// USER-AGENT,Star+*
+# USER-AGENT,Star+*
   - DOMAIN-SUFFIX,starplus.com
-// 拉美节点在大陆使用并不友好，可将此条独立出来单独走 US 线路
-#   - DOMAIN-SUFFIX,starott.com
+# 拉美节点在大陆使用并不友好，可将此条独立出来单独走 US 线路
+# - DOMAIN-SUFFIX,starott.com
   - PROCESS-NAME,com.disney.starplus
   - DOMAIN,star.api.edge.bamgrid.com
   - DOMAIN,star.connections.edge.bamgrid.com
@@ -12,7 +12,7 @@ payload:
   - DOMAIN,cnbl-cdn.bamgrid.com
   - DOMAIN,sdk.iad-03.braze.com
 #  - DOMAIN,cdn.registerdisney.go.com
-#static-assets.bamgrid.com
-#prod-ripcut-delivery.disney-plus.net
-// 此条与 Disney+ 共用，主要是加载海报，可注释。注释后打开 App 会提示账号漫游，但不影响正常使用。
-//   - DOMAIN,prod-ripcut-delivery.disney-plus.net
+# static-assets.bamgrid.com
+# prod-ripcut-delivery.disney-plus.net
+# 此条与 Disney+ 共用，主要是加载海报，可注释。注释后打开 App 会提示账号漫游，但不影响正常使用。
+#   - DOMAIN,prod-ripcut-delivery.disney-plus.net
