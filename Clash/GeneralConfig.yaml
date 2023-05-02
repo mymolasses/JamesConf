@@ -159,6 +159,17 @@ proxy-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 600
+  SG:
+    type: http
+    path: ./Provider/Proxy/Sub/SG.yaml
+    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
+    interval: 3600
+    filter: '新加坡|坡|狮城|SG|Singapore'
+    health-check: 
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+      
   KR:
     type: http
     path: ./Provider/Proxy/Sub/SG.yaml
@@ -181,6 +192,7 @@ proxy-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 600
+      
   TR:
     type: http
     path: ./Provider/Proxy/Sub/TR.yaml
@@ -662,7 +674,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./Provider/ChinaDOMAIN.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDOMAIN.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml
     interval: 86400
     
   ChinaCompanyIp:
