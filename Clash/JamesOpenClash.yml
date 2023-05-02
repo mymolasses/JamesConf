@@ -593,7 +593,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./Provider/RuleSet/Emby.yaml
-    url: https://raw.githubusercontent.com/JamesLiu0802/ACL4SSR/master/Clash/Providers/Ruleset/Emby.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/JamesConf/main/Clash/Providers/Emby.yaml
     interval: 86400
     
   StreamingTW:
@@ -748,7 +748,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./Provider/ChinaDOMAIN.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDOMAIN.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml
     interval: 86400
     
   ChinaCompanyIp:
