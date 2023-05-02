@@ -1,6 +1,11 @@
+#---------------------------------------------------#
+# 配置文件需要放置在 $HOME/.config/clash/config.yml
+# 或者运行目录下的config.yml
+#---------------------------------------------------#
+# 混合端口 HTTP和SOCKS5用一个端口
 port: 7890
 
-redir-port: 7892
+socks-port: 7891
 
 mixed-port: 7893
 
@@ -27,6 +32,26 @@ log-level: debug
 # Clash 的 RESTful API
 external-controller: '127.0.0.1:9090'
 
+# 您可以将静态网页资源（如 clash-dashboard）放置在一个目录中，clash 将会服务于 `RESTful API/ui`
+# 参数应填写配置目录的相对路径或绝对路径。
+# http://127.0.0.1:9090/ui/#/
+# external-ui: folder
+# yacd面板：  https://github.com/haishanh/yacd
+# Razord面板：http://clash.razord.top/#/proxies
+# external-ui: dashboard
+
+# RESTful API 的口令 (可选)
+# secret: ""
+
+
+# 本地 SOCKS5 / HTTP(S) 服务认证
+# authentication:
+#  - "user1:pass1"
+#  - "user2:pass2"
+
+# 实验性功能 hosts, 支持通配符 (例如 *.clash.dev 甚至 *.foo.*.example.com)
+# 静态的域名 比 通配域名 具有更高的优先级 (foo.example.com 优先于 *.example.com)
+# 注意: hosts 在 fake-ip 模式下不生效
 hosts:
   # Firebase Cloud Messaging
   'mtalk.google.com': 108.177.125.188
@@ -90,6 +115,47 @@ dns:
     '*.alibabausercontent.com': '223.6.6.6'
     '*.mmstat.com': '223.6.6.6'
     'tb.cn': '223.6.6.6'
+    
+# tun:
+ #  enable: true
+#   stack: system
+#   dns-hijack:
+ #    - 198.18.0.2:53
+
+
+# 1. clash DNS 请求逻辑：
+#   (1) 当访问一个域名时， nameserver 与 fallback 列表内的所有服务器并发请求，得到域名对应的 IP 地址。
+#   (2) clash 将选取 nameserver 列表内，解析最快的结果。
+#   (3) 若解析结果中，IP 地址属于 国外，那么 clash 将选择 fallback 列表内，解析最快的结果。
+#
+#   因此，我在 nameserver 和 fallback 内都放置了无污染、解析速度较快的国内 DNS 服务器，以达到最快的解析速度。
+#   但是 fallback 列表内服务器会用在解析境外网站，为了结果绝对无污染，我仅保留了支持 DoT/DoH 的两个服务器。
+#
+# 2. clash DNS 配置注意事项：
+#   (1) 如果您为了确保 DNS 解析结果无污染，请仅保留列表内以 tls:// 或 https:// 开头的 DNS 服务器，但是通常对于国内域名没有必要。
+#   (2) 如果您不在乎可能解析到污染的结果，更加追求速度。请将 nameserver 列表的服务器插入至 fallback 列表内，并移除重复项。
+#
+# 3. 关于 DNS over HTTPS (DoH) 和 DNS over TLS (DoT) 的选择：
+#   对于两项技术双方各执一词，而且会无休止的争论，各有利弊。各位请根据具体需求自行选择，但是配置文件内默认启用 DoT，因为目前国内没有封锁或管制。
+#   DoH: 以 https:// 开头的 DNS 服务器。拥有更好的伪装性，且几乎不可能被运营商或网络管理封锁，但查询效率和安全性可能略低。
+#   DoT: 以 tls:// 开头的 DNS 服务器。拥有更高的安全性和查询效率，但端口有可能被管制或封锁。
+#   若要了解更多关于 DoH/DoT 相关技术，请自行查阅规范文档。
+
+# 代理组
+# 下面这3个不要引到订阅里去 要不会出错
+# Will be ignored after profile selection
+#proxies:
+#  - name: Shadowsocks
+#    type: socks5
+#    server: 127.0.0.1
+#    port: 1080
+#proxy-groups:
+#  - name: Proxy
+#    type: select
+#    proxies:
+#      - Shadowsocks
+#rules:
+#  - 'MATCH,DIRECT'
 
 # Clash for Windows
 # Proxies module latency test settings
@@ -110,109 +176,37 @@ cfw-conn-break-strategy:
   profile: true # true/false
   mode: true # true/false
 
+# 自定义状态栏图标
+#cfw-tray-icon:
+#default: .\resources\static\imgs\logo_64.png        # 默认图标
+#system-proxy-on: .\resources\static\imgs\custom.ico   # 开启系统代理后图标
+
+# 自定义字体
+#cfw-font-family: "Noto Sans TC"   # 系统中存在的字体
+
+# 自定义请求头
+#cfw-http-headers:
+  #token: "123456"
+  #cfw-version: "0.9.11"
+
+# 自定义节点排序
+# 可选参数：
+#  default：按配置文件定义节点顺序
+#  latency：按节点延迟升序排列
+#  alphabet：按节点名称字母表排列
+# Sort proxies in Proxies module by default/latency/alphabet
 cfw-proxies-order: default
 
 
+# 系统代理跳过列表 cfw-bypass
+# System proxy will ignore these domains(or ipnet)
+# 系统代理跳过列表-备份的，不起作用，
+# 使用时可以将cfw-bypass-bak与cfw-bypass内容互换
 
 proxies:
 
 # 服务器节点订阅
 proxy-providers:
-
-  HK:
-    type: http
-    path: ./Provider/Proxy/Sub/HK.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
-    interval: 3600
-    filter: '港|HK|Hong Kong|Macau'
-    health-check: 
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 600
-  TW:
-    type: http
-    path: ./Provider/Proxy/Sub/TW.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
-    interval: 3600
-    filter: '台|新北|彰化|TW|Taiwan'
-    health-check: 
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 600
-  US:
-    type: http
-    path: ./Provider/Proxy/Sub/US.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
-    interval: 3600
-    filter: '美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States'
-    health-check: 
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 600
-  JP:
-    type: http
-    path: ./Provider/Proxy/Sub/JP.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
-    interval: 3600
-    filter: '日本|JP|Japan'
-    health-check: 
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 600
-  SG:
-    type: http
-    path: ./Provider/Proxy/Sub/SG.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
-    interval: 3600
-    filter: '新加坡|坡|狮城|SG|Singapore'
-    health-check: 
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 600
-      
-  KR:
-    type: http
-    path: ./Provider/Proxy/Sub/SG.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
-    interval: 3600
-    filter: 'KR|Korea|KOR|首尔|韩|韓'
-    health-check: 
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 600
-      
-   
-  SA:
-    type: http
-    path: ./Provider/Proxy/Sub/SA.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
-    interval: 3600
-    filter: 'Mexico|Argentina|Chile|Costa Rica|阿根廷|巴西|智利|Philippines|India|Turkey|Egypt|菲律宾|印度|土耳其|德国|埃及|Germany|Bulgaria|Spain|Netherlands|United Kingdom|保加利亚|西班牙|荷兰|英国a'
-    health-check: 
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 600
-      
-  TR:
-    type: http
-    path: ./Provider/Proxy/Sub/TR.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
-    interval: 3600
-    filter: '土耳其|TR|Turkey'
-    health-check: 
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 600
-  
-  UN:
-    type: http
-    path: ./Provider/Proxy/Sub/UN.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
-    interval: 3600
-    health-check: 
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 600
 
 proxy-groups:
   - name: "🚀 Proxy"
@@ -228,8 +222,8 @@ proxy-groups:
       
   - name: "✈️ Server"
     type: select
-    use:
-      - UN
+    filter: ''
+    proxies:
       
   - name: "📹 Youtube"
     type: select
@@ -267,42 +261,42 @@ proxy-groups:
   - name: "🏀 StarPlus"
     type: select
     use:
-      - SA
+      - ❄️ Rare
       
   - name: "🇨🇳 TW"
     type: select
-    use:
-      - TW
+    filter: '台|新北|彰化|TW|Taiwan'
+    proxies:
       
   - name: "🇺🇲 US"
     type: select
-    use:
-      - US
+    filter: '美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States'
+    proxies:
       
   - name: "🇭🇰 HK"
     type: select
-    use:
-      - HK
+    filter: '港|HK|Hong Kong|Macau'
+    proxies:
       
   - name: "🇯🇵 JP"
     type: select
-    use:
-      - JP
+    filter: '日本|川日|东京|大阪|泉日|埼玉|沪日|深日|日[^-]|JP|Japan'
+    proxies:
 
   - name: "🇸🇬 SG"
     type: select
-    use:
-      - SG
+    filter: '新加坡|坡|狮城|SG|Singapore'
+    proxies:
       
   - name: "🇰🇷 KR"
     type: select
-    use:
-      - KR
+    filter: 'KR|Korea|KOR|首尔|韩|韓'
+    proxies:
       
   - name: "❄️ Rare"
     type: select
-    use:
-      - SA
+    filter: 'Mexico|Argentina|Chile|Costa Rica|阿根廷|巴西|智利|Philippines|India|Turkey|Egypt|菲律宾|印度|土耳其|德国|埃及|Germany|Bulgaria|Spain|Netherlands|United Kingdom|保加利亚|西班牙|荷兰|英国'
+    proxies:
       
   - name: "📢 FCM"
     type: select
