@@ -512,7 +512,7 @@ rule-providers:
     type: http
     behavior: classical
     path: ./Provider/RuleSet/Youtube.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Youtube.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml
     interval: 86400
     
   Emby:
