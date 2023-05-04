@@ -392,13 +392,13 @@ proxy-groups:
   - name: "🌍 GlobalMedia"
     type: select
     proxies:
+      - ✈️ Server
       - 🇭🇰 HK
       - 🇨🇳 TW
       - 🇸🇬 SG
       - 🇯🇵 JP
       - 🇺🇲 US
       - 🇰🇷 KR
-      - ✈️ Server
       
   - name: "📺 BiliBili"
     type: select
