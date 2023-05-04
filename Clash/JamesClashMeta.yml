@@ -21,6 +21,7 @@ sniffer:
   - "+.amazonaws.com"
   - "+.media.dssott.com"
   - "+.starplus.com"
+  - "+.v2ex.com"
   skip-domain:
   - "+.apple.com"
   - Mijia Cloud
