@@ -16,7 +16,7 @@ payload:
   - DOMAIN,prod.brass.cloud.cupronickel.goog
   - DOMAIN,prod.zinc.cloud.cupronickel.goog
   
-  - DOMAIN-SUFFIX,dice-live-eu.akamaized.net
+  - DOMAIN-SUFFIX,dve-streams.akamaized.net
 
   - DOMAIN-SUFFIX,global.xiaomi.net
   - DOMAIN,pdc.micloud.xiaomi.net
