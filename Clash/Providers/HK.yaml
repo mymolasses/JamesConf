@@ -1,3 +1,4 @@
 payload:
   - DOMAIN-SUFFIX,hk
   - DOMAIN-SUFFIX,dve-streams.akamaized.net
+  - DOMAIN-SUFFIX,dice-live-eu.akamaized.net
