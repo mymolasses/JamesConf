@@ -282,6 +282,17 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 600
       
+  Setanta:
+    type: http
+    path: ./Provider/Proxy/Sub/Setanta.yaml
+    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
+    interval: 3600
+    filter: 'Belarus|Azerbaijan|Kazakhstan|Uzbekistan|白俄罗斯|阿塞拜疆|哈萨克斯坦|乌兹别克斯坦'
+    health-check: 
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
+      
   UN:
     type: http
     path: ./Provider/Proxy/Sub/UN.yaml
@@ -334,6 +345,10 @@ proxy-groups:
       - 🇭🇰 HK
       - 🇨🇳 TW
       - 🇯🇵 JP
+  - name: "📺 Setanta"
+    type: select
+    use:
+      - Setanta  
       
   - name: "📺 PrimeVideo"
     type: select
@@ -600,6 +615,13 @@ rule-providers:
     url: https://raw.githubusercontent.com/JamesLiu0802/JamesConf/main/Clash/Providers/Emby.yaml
     interval: 86400
     
+  Setanta:
+    type: http
+    behavior: classical
+    path: ./Provider/RuleSet/Setanta.yaml
+    url: https://raw.githubusercontent.com/JamesLiu0802/JamesConf/main/Clash/Providers/Setanta.yaml
+    interval: 86400
+    
   StreamingTW:
     type: http
     behavior: classical
@@ -775,7 +797,7 @@ rules:
   # Unbreak
   - RULE-SET,LocalAreaNetwork,🎯 Direct
   - RULE-SET,UnBan,🎯 Direct
-  - RULE-SET,Pikpak,🚀 Proxy
+  - RULE-SET,Pikpak,🇭🇰 HK
   - RULE-SET,EmbyDirect,🎯 Direct
 
   # AdBlock
@@ -805,6 +827,7 @@ rules:
   - RULE-SET,Youtube,📹 Youtube
   - RULE-SET,Emby,🇺🇲 US
 #  - RULE-SET,LeaguePass,LeaguePass
+  - RULE-SET,Setanta,📺 Setanta
   - RULE-SET,PrimeVideo,📺 PrimeVideo
   - RULE-SET,StreamingTW,🇨🇳 TW
   - RULE-SET,HBOGO,🇨🇳 TW
