@@ -12,6 +12,13 @@ mode: rule
 log-level: debug
 tcp-concurrent: true
 external-controller: 0.0.0.0:9090
+
+geodata-mode: true
+geox-url:
+  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
+  geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
+  mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
+
 sniffer:
   enable: true
   force-dns-mapping: true
@@ -463,12 +470,12 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Apple.yaml
     interval: 86400
     
-  Telegram:
-    type: http
-    behavior: classical
-    path: ./Provider/RuleSet/Telegram.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml
-    interval: 86400
+#  Telegram:
+#    type: http
+#    behavior: classical
+#    path: ./Provider/RuleSet/Telegram.yaml
+#    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml
+#    interval: 86400
 
   Epic:
     type: http
@@ -590,12 +597,12 @@ rule-providers:
     url: https://raw.githubusercontent.com/JamesLiu0802/JamesConf/main/Clash/Providers/DisneyPlus.yaml
     interval: 86400
 
-  Netflix:
-    type: http
-    behavior: classical
-    path: ./Provider/RuleSet/Netflix.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml
-    interval: 86400
+#  Netflix:
+#    type: http
+#    behavior: classical
+#    path: ./Provider/RuleSet/Netflix.yaml
+#    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml
+#    interval: 86400
  
   BilibiliHMT:
     type: http
@@ -706,7 +713,7 @@ rules:
   - RULE-SET,Apple,🍎 Apple
   
   # Telegram
-  - RULE-SET,Telegram,📲 Telegram
+  - GEOSITE,telegram,📲 Telegram
 
   # Game
   - RULE-SET,Epic,🎮 Game
@@ -730,6 +737,7 @@ rules:
   - RULE-SET,Pornhub,🇺🇲 US
   - RULE-SET,DisneyPlus,🎥 Netflix
   - RULE-SET,Netflix,🎥 Netflix
+  - GEOSITE,netflix,🎥 Netflix
   - RULE-SET,BilibiliHMT,📺 BiliBili
   - RULE-SET,Bilibili,📺 BiliBili
   
