@@ -15,12 +15,12 @@ external-controller: 0.0.0.0:9090
 sniffer:
   enable: true
   force-dns-mapping: true
-  parse-pure-ip: true
   force-domain:
   - "+.netflix.com"
   - "+.nflxvideo.net"
   - "+.amazonaws.com"
   - "+.media.dssott.com"
+  - "+.starplus.com"
   skip-domain:
   - "+.apple.com"
   - Mijia Cloud
