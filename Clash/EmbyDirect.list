@@ -13,3 +13,4 @@ DOMAIN-SUFFIX,tag-global-ddns.top
 IP-CIDR,103.175.99.6/0,no-resolve
 IP-CIDR,1.1.1.1/0,no-resolve
 IP-CIDR,8.8.8.8/0,no-resolve
+IP-CIDR,136.22.0.0/16,no-resolve
