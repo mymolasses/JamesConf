@@ -1,9 +1,10 @@
 PROCESS-NAME,BitComet.exe
+PROCESS-NAME,uu.exe
+
+
+# DOMAIN,cf2.misakaf.org
 DOMAIN-SUFFIX,mypikpak.com
 DOMAIN,www.jrskan.com
-# DOMAIN,cf2.misakaf.org
-PROCESS-NAME,uu.exe
-DST-PORT,22
 DOMAIN-SUFFIX,mm2022.top
 DOMAIN-SUFFIX,meimeiyun.top
 DOMAIN,dns.cloudflare.com
@@ -14,3 +15,4 @@ IP-CIDR,103.175.99.6/0,no-resolve
 IP-CIDR,1.1.1.1/0,no-resolve
 IP-CIDR,8.8.8.8/0,no-resolve
 IP-CIDR,136.22.0.0/16,no-resolve
+DST-PORT,22
