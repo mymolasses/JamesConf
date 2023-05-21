@@ -114,6 +114,7 @@ dns:
     '*.alibabausercontent.com': '223.6.6.6'
     '*.mmstat.com': '223.6.6.6'
     'tb.cn': '223.6.6.6'
+    '*.tag-global-ddns.top': '1.1.1.1'
     
 # tun:
  #  enable: true
