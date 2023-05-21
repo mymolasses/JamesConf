@@ -254,18 +254,7 @@ proxy-providers:
     url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
     interval: 3600
     filter: '新加坡|坡|狮城|SG|Singapore'
-    health-check: 
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 600
-      
-  KR:
-    type: http
-    path: ./Provider/Proxy/Sub/SG.yaml
-    url: https://james82.ga/getprofile?name=profiles/JamesConfig.ini&token=Jiange..
-    interval: 3600
-    filter: 'KR|Korea|KOR|首尔|韩|韓'
-    health-check: 
+    health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 600
@@ -313,7 +302,6 @@ proxy-groups:
       - 🇭🇰 HK
       - 🇯🇵 JP
       - 🇸🇬 SG
-      - 🇰🇷 KR
       
   - name: "✈️ Server"
     type: select
@@ -336,47 +324,46 @@ proxy-groups:
       - 🇯🇵 JP
       - 🇭🇰 HK
       - 🇺🇲 US
-      - 🇰🇷 KR
-      - ✈️ Server
+      - 🚀 Proxy
       
   - name: "📲 Telegram"
-    type: select
-    proxies:
-      - 🇭🇰 HK
-      - 🇨🇳 TW
-      - 🇯🇵 JP
+    type: url-test
+    use:
+      - SG
+      - HK
+
   - name: "📺 Setanta"
     type: select
     use:
       - Setanta  
-      
+
   - name: "📺 PrimeVideo"
     type: select
     proxies:
       - 🇨🇳 TW
       - 🇺🇲 US
       - ❄️ Rare
-      
+
   - name: "🏀 StarPlus"
     type: select
     proxies:
       - ❄️ Rare
-      
+
   - name: "🇨🇳 TW"
     type: select
     use:
       - TW
-      
+
   - name: "🇺🇲 US"
     type: select
     use:
       - US
-      
+
   - name: "🇭🇰 HK"
     type: select
     use:
       - HK
-      
+
   - name: "🇯🇵 JP"
     type: select
     use:
@@ -386,12 +373,7 @@ proxy-groups:
     type: select
     use:
       - SG
-      
-  - name: "🇰🇷 KR"
-    type: select
-    use:
-      - KR
-      
+
   - name: "❄️ Rare"
     type: select
     use:
@@ -407,20 +389,12 @@ proxy-groups:
   - name: "🌍 GlobalMedia"
     type: select
     proxies:
-      - ✈️ Server
+      - 🚀 Proxy
       - 🇭🇰 HK
       - 🇨🇳 TW
       - 🇸🇬 SG
       - 🇯🇵 JP
       - 🇺🇲 US
-      - 🇰🇷 KR
-      
-  - name: "📺 BiliBili"
-    type: select
-    proxies:
-      - 🎯 Direct
-      - 🇨🇳 TW
-      - 🇭🇰 HK
 
   - name: "🐟 Other"
     type: select
@@ -431,7 +405,6 @@ proxy-groups:
       - 🇨🇳 TW
       - 🇺🇲 US
       - 🇸🇬 SG
-      - 🇰🇷 KR
       
   - name: "Ⓜ️ Microsoft"
     type: select
@@ -706,20 +679,6 @@ rule-providers:
     path: ./Provider/RuleSet/Netflix.yaml
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml
     interval: 86400
- 
-  BilibiliHMT:
-    type: http
-    behavior: classical
-    path: ./Provider/RuleSet/BilibiliHMT.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/BilibiliHMT.yaml
-    interval: 86400
-    
-  Bilibili:
-    type: http
-    behavior: classical
-    path: ./Provider/RuleSet/Bilibili.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bilibili.yaml
-    interval: 86400
     
   ChinaMedia:
     type: http
@@ -840,8 +799,7 @@ rules:
   - RULE-SET,Pornhub,🇺🇲 US
   - RULE-SET,DisneyPlus,🎥 Netflix
   - RULE-SET,Netflix,🎥 Netflix
-  - RULE-SET,BilibiliHMT,📺 BiliBili
-  - RULE-SET,Bilibili,📺 BiliBili
+
   
   - RULE-SET,ChinaMedia,🎯 Direct
   - RULE-SET,ProxyMedia,🌍 GlobalMedia
