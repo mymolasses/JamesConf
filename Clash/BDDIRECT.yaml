@@ -97,6 +97,28 @@ cfw-proxies-order: default
 
 proxies:
 
+  - name: "suzhou" 
+    type: http 
+    server: 153.3.236.22
+    port: 443
+    tls: false
+    skip-cert-verify: true
+    headers:
+      Host: "153.3.236.22:443"
+      X-T5-Auth: "683556433"
+      Proxy-Connection: "Keep-Alive"
+  
+  - name: "suzhou"
+    type: http
+    server: 157.0.148.53
+    port: 443
+    tls: false
+    skip-cert-verify: true
+    headers: 
+      Host: "153.3.236.22:443"
+      X-T5-Auth: "683556433"
+      Proxy-Connection: "Keep-Alive"
+
 # 服务器节点订阅
 proxy-providers:
 
