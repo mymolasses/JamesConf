@@ -13,6 +13,8 @@ DOMAIN-SUFFIX,androidfilehost.com
 
 DOMAIN,dl.pixelexperience.org
 
+PROCESS-NAME,wget-ssl
+
 
 # NAME: Speedtest
 # AUTHOR: blackmatrix7
