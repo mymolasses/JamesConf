@@ -12,9 +12,8 @@ payload:
   - DOMAIN,static.mypikpak.com
   - DOMAIN,config.mypikpak.com
   - DOMAIN,rcv5-sp.mypikpak.com
-  - DOMAIN-KEYWORD,ipify
-  - DOMAIN,prod.brass.cloud.cupronickel.goog
-  - DOMAIN,prod.zinc.cloud.cupronickel.goog
+  
+  - DOMAIN,sub.xeton.dev
   
   - DOMAIN-SUFFIX,dve-streams.akamaized.net
   - DOMAIN-SUFFIX,dice-live-eu.akamaized.net
