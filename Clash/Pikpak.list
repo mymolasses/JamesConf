@@ -11,7 +11,8 @@ DOMAIN,access.pikpak.me
 DOMAIN,static.mypikpak.com
 DOMAIN,config.mypikpak.com
 DOMAIN,rcv5-sp.mypikpak.com
-DOMAIN-KEYWORD,ipify
+
+DOMAIN,sub.xeton.dev
 
 DOMAIN-SUFFIX,dve-streams.akamaized.net
 DOMAIN-SUFFIX,dice-live-eu.akamaized.net
