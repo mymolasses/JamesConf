@@ -208,21 +208,12 @@ proxies:
 
 # 服务器节点订阅
 proxy-providers:
-#   HK:
-#     type: http
-#     path: ./Provider/Proxy/Sub/HK.yaml
-#     url: https://dove.589669.xyz/all2clash?sub=https://sub.hotkids.me
-#     interval: 3600
-#     filter: '香港|HK|Hong Kong|🇭🇰'
-#     health-check: 
-#       enable: true
-#       url: http://www.gstatic.com/generate_204
-#       interval: 600
+
 
   HK:
     type: http
     path: ./Provider/Proxy/Sub/HK.yaml
-    url: https://sub.store/download/paoche
+    url: https://sub.store/download/mmy&tag
     interval: 3600
     filter: '香港|HK|Hong Kong|🇭🇰'
     health-check: 
@@ -232,7 +223,7 @@ proxy-providers:
   TW:
     type: http
     path: ./Provider/Proxy/Sub/TW.yaml
-    url: https://sub.store/download/collection/mix
+    url: https://sub.store/download/mmy&tag
     interval: 3600
     filter: '台湾|TW|Taiwan'
     health-check: 
@@ -242,7 +233,7 @@ proxy-providers:
   SG:
     type: http
     path: ./Provider/Proxy/Sub/SG.yaml
-    url: https://sub.store/download/collection/mix
+    url: https://sub.store/download/mmy&tag
     interval: 3600
     filter: '新加坡|狮城|SG|Singapore'
     health-check: 
@@ -252,7 +243,7 @@ proxy-providers:
   JP:
     type: http
     path: ./Provider/Proxy/Sub/JP.yaml
-    url: https://sub.store/download/collection/mix
+    url: https://sub.store/download/mmy&tag
     interval: 3600
     filter: '日本|JP|Japan'
     health-check: 
@@ -262,7 +253,7 @@ proxy-providers:
   US:
     type: http
     path: ./Provider/Proxy/Sub/US.yaml
-    url: https://sub.store/download/collection/mix
+    url: https://sub.store/download/mmy&tag
     interval: 3600
     filter: '美国|US|USA|America|United States|🇺🇸'
     health-check: 
@@ -272,7 +263,7 @@ proxy-providers:
   SA:
     type: http
     path: ./Provider/Proxy/Sub/SA.yaml
-    url: https://sub.store/download/collection/mix
+    url: https://sub.store/download/mmy&tag
     interval: 3600
     filter: '阿根廷|AR|Argentina|巴西|智利|秘鲁|墨西哥|乌拉圭|哥斯达黎加|Perdu|Mexico|Costa Rica'
     health-check: 
@@ -282,7 +273,7 @@ proxy-providers:
   TR:
     type: http
     path: ./Provider/Proxy/Sub/TR.yaml
-    url: https://sub.store/download/collection/mix
+    url: https://sub.store/download/mmy&tag
     interval: 3600
     filter: '土耳其|TR|Turkey'
     health-check: 
@@ -293,7 +284,7 @@ proxy-providers:
   UN:
     type: http
     path: ./Provider/Proxy/Sub/UN.yaml
-    url: https://sub.store/download/collection/mix
+    url: https://sub.store/download/mmy&tag
     interval: 3600
     health-check: 
       enable: true
