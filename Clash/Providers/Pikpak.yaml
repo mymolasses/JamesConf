@@ -22,6 +22,7 @@ payload:
   - DOMAIN,pdc.micloud.xiaomi.net
   - DOMAIN-SUFFIX,intl.miui.com
   - DOMAIN-SUFFIX,global.xiaomi.com
+  - DOMAIN,global.market.xiaomi.com
   - DOMAIN,connect.intl.rom.miui.com
   - DOMAIN,jupiter.intl.sys.miui.com
   - DOMAIN,mmbiz.qpic.cn
