@@ -59,17 +59,17 @@ dns:
       - https://dns.alidns.com/dns-query
     www.baidu.com: https://223.6.6.6/dns-query
     "+.tag-global-ddns.top": https://dns.cloudflare.com/dns-query
-    "+.internal.crop.com": 114.114.114.114
+    "+.internal.crop.com": https://doh.pub/dns-query
   enhanced-mode: redir-host
   use-hosts: true
 #  proxy-server-nameserver:
 #  - https://dns.cloudflare.com/dns-query
   nameserver:
-    - 114.114.114.114
+    - https://114.114.114.114/dns-query#h3=true
     - https://dns.alidns.com/dns-query#h3=true
   fallback:
     - https://dns.cloudflare.com/dns-query#h3=true
-    - tls://dot.tiar.app
+    - https://jp.tiar.app/dns-query#h3=true
   fallback-filter:
     geoip: true
     geoip-code: CN
