@@ -51,13 +51,10 @@ dns:
   prefer-h3: true # 开启 DoH 支持 HTTP/3，将并发尝试
   listen: 0.0.0.0:7874
   ipv6: false
-  default-nameserver:
-    - 114.114.114.114
   nameserver-policy:
     "geosite:cn,private,apple":
       - https://doh.pub/dns-query
       - https://dns.alidns.com/dns-query
-    www.baidu.com: https://223.6.6.6/dns-query
     "+.tag-global-ddns.top": https://dns.cloudflare.com/dns-query
     "+.internal.crop.com": https://doh.pub/dns-query
   enhanced-mode: redir-host
@@ -65,7 +62,7 @@ dns:
 #  proxy-server-nameserver:
 #  - https://dns.cloudflare.com/dns-query
   nameserver:
-    - https://114.114.114.114/dns-query#h3=true
+    - https://114.114.114.114/dns-query
     - https://dns.alidns.com/dns-query#h3=true
   fallback:
     - https://dns.cloudflare.com/dns-query#h3=true
