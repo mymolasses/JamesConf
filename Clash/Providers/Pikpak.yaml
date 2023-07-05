@@ -25,7 +25,7 @@ payload:
   - DOMAIN,global.market.xiaomi.com
   - DOMAIN,connect.intl.rom.miui.com
   - DOMAIN,jupiter.intl.sys.miui.com
-  - DOMAIN,mmbiz.qpic.cn
+  - DOMAIN-SUFFIX,intl.inf.miui.com
   - IP-CIDR,47.74.0.0/16,no-resolve
   - IP-CIDR,47.241.0.0/16,no-resolve
   - IP-CIDR,161.117.0.0/16,no-resolve
