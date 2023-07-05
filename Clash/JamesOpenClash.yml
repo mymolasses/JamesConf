@@ -109,7 +109,7 @@ dns:
     - https://dns.cloudflare.com/dns-query
     - https://jp.tiar.app/dns-query
   fallback-filter:
-    geoip: true
+    geoip: false
     geoip-code: CN
     ipcidr:
       - 240.0.0.0/4
