@@ -67,11 +67,11 @@ dns:
      #- '*.lan'
      #- localhost.ptlogin2.qq.com
   nameserver:
-    - 114.114.114.114
-    - 223.6.6.6
+    - https://114.114.114.114/dns-query
+    - https://dns.alidns.com/dns-query
   fallback:
-    - https://1.1.1.1/dns-query
-    - tls://dot.tiar.app
+    - https://dns.cloudflare.com/dns-query
+    - https://jp.tiar.app/dns-query
   fallback-filter:
     geoip: true
     geoip-code: CN
