@@ -17,6 +17,13 @@ DOMAIN,sub.xeton.dev
 DOMAIN-SUFFIX,dve-streams.akamaized.net
 DOMAIN-SUFFIX,dice-live-eu.akamaized.net
 
+
+DOMAIN,dns.cloudflare.com
+DOMAIN,jp.tiar.app
+IP-CIDR,1.1.1.1/32,no-resolve
+IP-CIDR,1.0.0.1/32,no-resolve
+IP-CIDR,8.8.8.8/32,no-resolve
+IP-CIDR,8.8.4.4/32,no-resolve
 DOMAIN-SUFFIX,global.xiaomi.net
 DOMAIN-SUFFIX,intl.miui.com
 DOMAIN,global.market.xiaomi.com
