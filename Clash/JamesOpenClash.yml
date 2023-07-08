@@ -61,11 +61,16 @@ hosts:
 
 dns:
   enable: true # 是否启用dns false
-#  enhanced-mode: redir-host # 模式：redir-host或fake-ip
+  enhanced-mode: fake-ip # 模式：redir-host或fake-ip
   listen: 0.0.0.0:7874 #
+  fake-ip-range: 198.18.0.1/16
   #fake-ip-filter: # fake ip 白名单列表，如果你不知道这个参数的作用，请勿修改
      #- '*.lan'
      #- localhost.ptlogin2.qq.com
+  nameserver-policy:
+    'geosite:cn,private,apple': https://114.114.114.114/dns-query
+    'geosite:gfw': https://dns.cloudflare.com/dns-query
+    '+.tag-global-ddns.top': https://dns.cloudflare.com/dns-query
   nameserver:
     - https://114.114.114.114/dns-query
     - https://dns.alidns.com/dns-query
@@ -94,28 +99,12 @@ dns:
       - 'telegra.ph'
       - 'youtu.be'
   # Lookup domains via specific nameservers
-  nameserver-policy:
-    # Alibaba
-    '*.alibaba.cn': '223.6.6.6'
-    '*.alibaba.com.cn': '223.6.6.6'
-    '*.china.alibaba.com': '223.6.6.6'
-    '*.1688.com': '223.6.6.6'
-    '*.taobao.com': '223.6.6.6'
-    '*.tbcache.com': '223.6.6.6'
-    '*.tmall.com': '223.6.6.6'
-    '*.alicdn.com': '223.6.6.6'
-    '*.aliyundrive.com': '223.6.6.6'
-    '*.aliyun.*': '223.6.6.6'
-    '*.aliyuncdn.*': '223.6.6.6'
-    '*.aliyuncs.com': '223.6.6.6'
-    '*.aliyundunwaf.com': '223.6.6.6'
-    '*.aliapp.com': '223.6.6.6'
-    '*.aliapp.org': '223.6.6.6'
-    '*.alibabausercontent.com': '223.6.6.6'
-    '*.mmstat.com': '223.6.6.6'
-    'tb.cn': '223.6.6.6'
-    '*.tag-global-ddns.top': '1.1.1.1'
-    
+  
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+  - tcp://any:53    
 # tun:
  #  enable: true
 #   stack: system
