@@ -48,28 +48,27 @@ hosts:
 
 dns:
   enable: true
+  enhanced-mode: fake-ip
   prefer-h3: true # 开启 DoH 支持 HTTP/3，将并发尝试
   listen: 0.0.0.0:7874
   ipv6: false
+  fake-ip-range: 198.18.0.1/16
   default-nameserver:
     - 114.114.114.114
   nameserver-policy:
-    'geosite:cn,private,apple':
-      - https://doh.pub/dns-query
-      - https://dns.alidns.com/dns-query
-    'www.baidu.com': https://223.6.6.6/dns-query
-    '+.tag-global-ddns.top': https://dns.cloudflare.com/dns-query
-    '+.internal.crop.com': https://doh.pub/dns-query
-  enhanced-mode: redir-host
+    'geosite:cn,private,apple': https://114.114.114.114/dns-query
+    'geosite:gfw': https://1.1.1.1/dns-query
+    '+.tag-global-ddns.top': https://1.1.1.1/dns-query
+  
   use-hosts: true
 #  proxy-server-nameserver:
 #  - https://dns.cloudflare.com/dns-query
   nameserver:
-    - https://114.114.114.114/dns-query#h3=true
-    - https://dns.alidns.com/dns-query#h3=true
+    - https://114.114.114.114/dns-query
+    - https://dns.alidns.com/dns-query
   fallback:
-    - https://dns.cloudflare.com/dns-query#h3=true
-    - https://jp.tiar.app/dns-query#h3=true
+    - https://dns.cloudflare.com/dns-query
+    - https://jp.tiar.app/dns-query
   fallback-filter:
     geoip: true
     geoip-code: CN
@@ -95,6 +94,13 @@ dns:
     - t.me
     - telegra.ph
     - youtu.be
+tun:
+  enable: true
+  stack: system
+  auto-route: false
+  auto-detect-interface: false
+  dns-hijack:
+  - tcp://any:53
 cfw-latency-timeout: 3000
 cfw-latency-url: http://www.gstatic.com/generate_204
 cfw-conn-break-strategy:
