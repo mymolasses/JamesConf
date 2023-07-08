@@ -54,12 +54,12 @@ dns:
   default-nameserver:
     - 114.114.114.114
   nameserver-policy:
-    "geosite:cn,private,apple":
+    'geosite:cn,private,apple':
       - https://doh.pub/dns-query
       - https://dns.alidns.com/dns-query
-    www.baidu.com: https://223.6.6.6/dns-query
-    "+.tag-global-ddns.top": https://dns.cloudflare.com/dns-query
-    "+.internal.crop.com": https://doh.pub/dns-query
+    'www.baidu.com': https://223.6.6.6/dns-query
+    '+.tag-global-ddns.top': https://dns.cloudflare.com/dns-query
+    '+.internal.crop.com': https://doh.pub/dns-query
   enhanced-mode: redir-host
   use-hosts: true
 #  proxy-server-nameserver:
