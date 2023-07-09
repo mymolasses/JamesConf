@@ -56,9 +56,9 @@ dns:
   default-nameserver:
     - 114.114.114.114
   nameserver-policy:
-    'geosite:cn,private,apple': https://114.114.114.114/dns-query
-    'geosite:gfw': https://1.1.1.1/dns-query
-    '+.tag-global-ddns.top': https://1.1.1.1/dns-query
+    'geosite:cn,private,apple': 114.114.114.114
+    'geosite:gfw': 1.1.1.1
+    '+.tag-global-ddns.top': 1.1.1.1
   
   use-hosts: true
 #  proxy-server-nameserver:
@@ -112,8 +112,8 @@ dns:
 tun:
   enable: true
   stack: system
-  auto-route: false
-  auto-detect-interface: false
+  auto-route: true
+  auto-detect-interface: true
   dns-hijack:
   - tcp://any:53
 cfw-latency-timeout: 3000
