@@ -65,6 +65,7 @@ dns:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
   fallback:
+    - quic://dns.adguard.com:784 # DNS over QUIC
     - https://cloudflare-dns.com/dns-query
     - https://doh.opendns.com/dns-query
     - https://dns.twnic.tw/dns-query
