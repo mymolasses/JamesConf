@@ -53,22 +53,21 @@ dns:
   listen: 0.0.0.0:7874
   ipv6: false
   fake-ip-range: 198.18.0.1/16
-  default-nameserver:
-    - 114.114.114.114
   nameserver-policy:
-    'geosite:cn,private,apple': 114.114.114.114
-    'geosite:gfw': 1.1.1.1
-    '+.tag-global-ddns.top': 1.1.1.1
+    'geosite:cn,private,apple': 'https://dns.alidns.com/dns-query'
+    'geosite:gfw': 'https://dns.cloudflare.com/dns-query'
+    '+.tag-global-ddns.top': 'https://dns.cloudflare.com/dns-query'
   
   use-hosts: true
 #  proxy-server-nameserver:
 #  - https://dns.cloudflare.com/dns-query
   nameserver:
-    - https://114.114.114.114/dns-query
     - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
   fallback:
-    - https://dns.cloudflare.com/dns-query
-    - https://jp.tiar.app/dns-query
+    - https://cloudflare-dns.com/dns-query
+    - https://doh.opendns.com/dns-query
+    - https://dns.twnic.tw/dns-query
   fallback-filter:
     geoip: true
     geoip-code: CN
