@@ -68,9 +68,9 @@ dns:
      #- '*.lan'
      #- localhost.ptlogin2.qq.com
   nameserver-policy:
-    'geosite:cn,private,apple': https://114.114.114.114/dns-query
-    'geosite:gfw': https://dns.cloudflare.com/dns-query
-    '+.tag-global-ddns.top': https://dns.cloudflare.com/dns-query
+    'geosite:cn,private,apple': 114.114.114.114
+    'geosite:gfw': 1.1.1.1
+    '+.tag-global-ddns.top': 1.1.1.1
   nameserver:
     - https://114.114.114.114/dns-query
     - https://dns.alidns.com/dns-query
