@@ -2,7 +2,5 @@ DOMAIN-SUFFIX,emby.wtf
 DOMAIN-SUFFIX,misakaf.org
 DOMAIN-SUFFIX,*.2046acg.com
 DOMAIN-SUFFIX,xywlapi.cc
-#DOMAIN,dns.cloudflare.com
-#DOMAIN,jp.tiar.app
-IP-CIDR,168.138.176.146/27,no-resolve
-#IP-CIDR,1.1.1.1/27,no-resolve
+IP-CIDR,168.138.176.146/32,no-resolve
+
