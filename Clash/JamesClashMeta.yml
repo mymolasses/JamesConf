@@ -55,8 +55,8 @@ dns:
   fake-ip-range: 198.18.0.1/16
   nameserver-policy:
     'geosite:cn,private,apple': 'https://dns.alidns.com/dns-query'
-    'geosite:gfw': 'https://dns.cloudflare.com/dns-query'
-    '+.tag-global-ddns.top': 'https://dns.cloudflare.com/dns-query'
+    'geosite:gfw': 'https://cloudflare-dns.com/dns-query'
+    '+.tag-global-ddns.top': 'https://cloudflare-dns.com/dns-query'
   
   use-hosts: true
 #  proxy-server-nameserver:
