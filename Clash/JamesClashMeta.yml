@@ -48,19 +48,21 @@ hosts:
 
 dns:
   enable: true
-  enhanced-mode: fake-ip
+  enhanced-mode: redir-host
   prefer-h3: true # 开启 DoH 支持 HTTP/3，将并发尝试
   listen: 0.0.0.0:7874
   ipv6: false
   fake-ip-range: 198.18.0.1/16
   nameserver-policy:
-    'geosite:cn,private,apple': 'https://dns.alidns.com/dns-query'
-    'geosite:gfw': 'https://cloudflare-dns.com/dns-query'
-    '+.tag-global-ddns.top': 'https://cloudflare-dns.com/dns-query'
+    "geosite:cn,private,apple":
+      - https://doh.pub/dns-query
+      - https://dns.alidns.com/dns-query
+    "geosite:gfw":
+      - https://cloudflare-dns.com/dns-query
+    "+.tag-global-ddns.top":
+      - https://cloudflare-dns.com/dns-query
   
   use-hosts: true
-#  proxy-server-nameserver:
-#  - https://dns.cloudflare.com/dns-query
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
@@ -75,22 +77,7 @@ dns:
     geosite:
     - gfw
     ipcidr:
-    - 0.0.0.0/8
-    - 10.0.0.0/8
-    - 100.64.0.0/10
-    - 127.0.0.0/8
-    - 169.254.0.0/16
-    - 172.16.0.0/12
-    - 192.0.0.0/24
-    - 192.0.2.0/24
-    - 192.88.99.0/24
-    - 192.168.0.0/16
-    - 198.18.0.0/15
-    - 198.51.100.0/24
-    - 203.0.113.0/24
-    - 224.0.0.0/4
     - 240.0.0.0/4
-    - 255.255.255.255/32
     domain:
     - "+.google.+"
     - "+.googleapis.com"
@@ -121,5 +108,5 @@ cfw-latency-url: http://www.gstatic.com/generate_204
 cfw-conn-break-strategy:
   proxy: all
   profile: true
-  mode: false
+  mode: true
 cfw-proxies-order: default
