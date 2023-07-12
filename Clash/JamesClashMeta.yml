@@ -96,13 +96,7 @@ dns:
     - t.me
     - telegra.ph
     - youtu.be
-tun:
-  enable: true
-  stack: system
-  auto-route: true
-  auto-detect-interface: true
-  dns-hijack:
-  - tcp://any:53
+
 cfw-latency-timeout: 3000
 cfw-latency-url: http://www.gstatic.com/generate_204
 cfw-conn-break-strategy:
