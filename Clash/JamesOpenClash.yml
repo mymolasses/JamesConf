@@ -52,9 +52,6 @@ dns:
   #enhanced-mode: redir-host # 模式：redir-host或fake-ip
   listen: 0.0.0.0:7874 #
 
-  nameserver-policy:
-    "+.tag-global-ddns.top":
-      - https://cloudflare-dns.com/dns-query
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
@@ -87,6 +84,8 @@ dns:
     - t.me
     - telegra.ph
     - youtu.be
+  nameserver-policy:
+    '*.tag-global-ddns.top': '1.1.1.1'
   
 
 
