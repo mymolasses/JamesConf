@@ -51,7 +51,10 @@ dns:
   enable: true # 是否启用dns false
   #enhanced-mode: redir-host # 模式：redir-host或fake-ip
   listen: 0.0.0.0:7874 #
-
+  default-nameserver:
+    - 114.114.114.114
+    - 8.8.8.8
+    - tls://223.5.5.5:853
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
@@ -62,30 +65,8 @@ dns:
   fallback-filter:
     geoip: true
     geoip-code: CN
-    geosite:
-    - gfw
-    ipcidr:
-    - 240.0.0.0/4
-    domain:
-    - "+.google.+"
-    - "+.googleapis.com"
-    - "+.googlevideo.com"
-    - "+.gstatic.cn"
-    - "+.gstatic.com"
-    - "+.gvt1.com"
-    - "+.gvt2.com"
-    - "+.recaptcha.net"
-    - "+.twimg.com"
-    - "+.twitter.com"
-    - "+.youtube.com"
-    - "+.ytimg.com"
-    - twitter.com
-    - t.co
-    - t.me
-    - telegra.ph
-    - youtu.be
   nameserver-policy:
-    '*.tag-global-ddns.top': '1.1.1.1'
+    "*.tag-global-ddns.top": [1.1.1.1, https://cloudflare-dns.com/dns-query]
   
 
 
