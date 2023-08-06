@@ -9,5 +9,6 @@ DOMAIN-SUFFIX,mm2022.top
 DOMAIN-SUFFIX,meimeiyun.top
 DOMAIN-SUFFIX,898799.xyz
 DOMAIN-SUFFIX,tag-global-ddns.top
+DOMAIN-SUFFIX,emby.wtf
 IP-CIDR,136.22.0.0/16,no-resolve
 DST-PORT,22
