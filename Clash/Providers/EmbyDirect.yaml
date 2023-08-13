@@ -2,6 +2,7 @@ payload:
   - PROCESS-NAME,BitComet.exe
   - PROCESS-NAME,uu.exe
 
+  - DOMAIN-SUFFIX,ttvnw.net
 
 # DOMAIN,cf2.misakaf.org
   - DOMAIN-SUFFIX,mypikpak.com
