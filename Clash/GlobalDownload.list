@@ -56,3 +56,6 @@ PROCESS-NAME,mega.privacy.android.app
 
 DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,githubusercontent.com
+
+DOMAIN-SUFFIX,jetbrains.com
+DOMAIN-SUFFIX,intellij.net
