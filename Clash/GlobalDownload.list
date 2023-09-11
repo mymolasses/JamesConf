@@ -55,3 +55,4 @@ IP-CIDR6,2a0b:e45:1::/48,no-resolve
 PROCESS-NAME,mega.privacy.android.app
 
 DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,githubusercontent.com
