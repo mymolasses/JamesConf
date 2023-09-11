@@ -50,4 +50,5 @@ payload:
   - PROCESS-NAME,mega.privacy.android.app
   
   - DOMAIN-SUFFIX,googleusercontent.com
+  - DOMAIN-SUFFIX,githubusercontent.com
   
