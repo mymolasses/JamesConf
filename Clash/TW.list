@@ -1,8 +1,9 @@
 DOMAIN-SUFFIX,*.tw
 
 # NAME: League Pass
+DOMAIN-SUFFIX,nba.com
+DOMAIN-SUFFIX,neulion.com
 DOMAIN,nbalpng.akamaized.net
-DOMAIN,kinesis.eu-central-1.amazonaws.com
 
 
 # NAME: Line
