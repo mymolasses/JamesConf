@@ -9,9 +9,7 @@ DOMAIN-SUFFIX,msn.com
 DOMAIN-SUFFIX,msocdn.com
 DOMAIN-SUFFIX,msocsp.com
 
-# NAME: League Pass
-DOMAIN,nbalpng.akamaized.net
-DOMAIN,kinesis.eu-central-1.amazonaws.com
+
 
 DOMAIN,fi.google.com
 DOMAIN-SUFFIX,ebay-us.com
