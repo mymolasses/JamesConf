@@ -1,6 +1,8 @@
 DOMAIN-SUFFIX,*.tw
 
-
+# NAME: League Pass
+DOMAIN,nbalpng.akamaized.net
+DOMAIN,kinesis.eu-central-1.amazonaws.com
 
 
 # NAME: Line
