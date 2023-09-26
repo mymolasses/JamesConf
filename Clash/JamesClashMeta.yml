@@ -19,7 +19,6 @@ geox-url:
   geosite: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
   mmdb: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
 
-
 profile: # 存储 select 选择记录
   store-selected: true
 
@@ -59,9 +58,10 @@ dns:
   prefer-h3: true # 开启 DoH 支持 HTTP/3，将并发尝试
   listen: 0.0.0.0:7874
   default-nameserver:
-    - 114.114.114.114
-    - 8.8.8.8
     - tls://223.5.5.5:853
+    - 223.5.5.5
+    - 168.95.192.1
+    - 1.1.1.1
   ipv6: false
   # fake-ip-range: 198.18.0.1/16
   nameserver-policy:
@@ -69,6 +69,9 @@ dns:
       - https://doh.pub/dns-query
       - https://dns.alidns.com/dns-query
     "geosite:gfw":
+      - quic://dns.adguard.com:784
+      - https://doh.opendns.com/dns-query
+      - https://dns.twnic.tw/dns-query
       - https://cloudflare-dns.com/dns-query
     "+.tag-global-ddns.top":
       - https://cloudflare-dns.com/dns-query
