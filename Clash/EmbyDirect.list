@@ -6,7 +6,7 @@ DOMAIN-SUFFIX,cloudflarestorage.com
 
 DOMAIN-SUFFIX,ttvnw.net
 
-
+PROCESS-NAME,mosdns
 DOMAIN,dns11.quad9.net
 DOMAIN,dns.twnic.tw
 
