@@ -6,7 +6,6 @@ DOMAIN-SUFFIX,cloudflarestorage.com
 
 DOMAIN-SUFFIX,ttvnw.net
 
-PROCESS-NAME,mosdns
 
 
 #IP-CIDR,1.1.1.1/32,no-resolve
