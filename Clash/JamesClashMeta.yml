@@ -59,9 +59,7 @@ dns:
   listen: 0.0.0.0:7874
   default-nameserver:
     - tls://223.5.5.5:853
-    - 223.5.5.5
-    - 168.95.192.1
-    - 1.1.1.1
+    - 1.0.0.1
   ipv6: false
   # fake-ip-range: 198.18.0.1/16
   nameserver-policy:
@@ -71,7 +69,7 @@ dns:
     "geosite:gfw":
       - quic://dns.adguard.com:784
       - https://doh.opendns.com/dns-query
-      - https://dns.twnic.tw/dns-query
+      - https://149.112.112.11/dns-query
       - https://cloudflare-dns.com/dns-query
     "+.tag-global-ddns.top":
       - https://cloudflare-dns.com/dns-query
@@ -83,8 +81,8 @@ dns:
   fallback:
     - quic://dns.adguard.com:784   # DNS over QUIC
     - https://cloudflare-dns.com/dns-query
-    - https://doh.opendns.com/dns-query
-    - https://dns.twnic.tw/dns-query
+    - https://149.112.112.11/dns-query
+    - https://101.102.103.104/dns-query
   fallback-filter:
     geoip: true
     geoip-code: CN
