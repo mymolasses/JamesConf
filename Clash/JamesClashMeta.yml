@@ -13,11 +13,6 @@ log-level: debug
 tcp-concurrent: true
 external-controller: 0.0.0.0:9090
 
-geodata-mode: true
-geox-url:
-  geoip: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
-  geosite: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
-  mmdb: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
 
 profile: # 存储 select 选择记录
   store-selected: true
