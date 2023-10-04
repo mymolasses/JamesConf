@@ -58,10 +58,10 @@ dns:
       - https://dns.alidns.com/dns-query#h3=true
       - https://doh.pub/dns-query
     "geosite:gfw":
-      - https://cloudflare-dns.com/dns-query
+      - https://1.0.0.1/dns-query
       - https://149.112.112.11/dns-query
     "+.tag-global-ddns.top":
-      - https://cloudflare-dns.com/dns-query
+      - https://1.0.0.1/dns-query
   
   use-hosts: true
   nameserver:
@@ -69,8 +69,7 @@ dns:
     - https://doh.pub/dns-query
   fallback:
     - quic://dns.adguard.com:784   # DNS over QUIC
-    - https://cloudflare-dns.com/dns-query
-    - 1.0.0.1
+    - https://1.0.0.1/dns-query
     - https://149.112.112.11/dns-query
   fallback-filter:
     geoip: true
