@@ -1,5 +1,8 @@
 DOMAIN-SUFFIX,*.tw
 
+DOMAIN,dns.twnic.tw
+IP-CIDR,101.101.101.101/32,no-resolve
+
 # NAME: League Pass
 DOMAIN-SUFFIX,nba.com
 DOMAIN-SUFFIX,neulion.com
