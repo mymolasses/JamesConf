@@ -1,6 +1,38 @@
 {
-  "log": {},
-  "dns": {},
+  "log": {
+    "disabled": false,
+    "level": "debug",
+    ## "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "alidns",
+        "address": "https://223.5.5.5/dns-query", #dns服务器地址
+        "address_resolver": "local", # 如果服务器地址包括域名则必须
+        "address_strategy": "prefer_ipv4",
+        "strategy": "ipv4_only",
+        "detour": "direct"
+      }
+      {
+        "tag": "cloudflare",
+        "address": "https://1.0.0.1/dns-query", #dns服务器地址
+        "address_resolver": "local", # 如果服务器地址包括域名则必须
+        "address_strategy": "prefer_ipv4",
+        "strategy": "ipv4_only",
+        "detour": "direct"
+      }
+##      {
+#        "tag": "adguard",
+#        "address": "quic://dns.adguard.com:784", #dns服务器地址
+#        "address_resolver": "local", #
+#        "address_strategy": "prefer_ipv4",
+#        "strategy": "ipv4_only",
+#        "detour": "direct"
+#      }
+    ]
+  },
   "inbounds": [],
   "outbounds": [],
   "route": {},
