@@ -1,0 +1,8 @@
+payload:
+  # NAME: League Pass
+  - DOMAIN-SUFFIX,nba.com
+  - DOMAIN-SUFFIX,neulion.com
+  - DOMAIN,nbalpng.akamaized.net
+  - DOMAIN,nba-cdn.cloud.easelive.tv
+  - DOMAIN,rest-prod-nba.evergent.com
+  - DOMAIN,nba.ra3ncmyg1p.com
