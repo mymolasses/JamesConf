@@ -60,7 +60,6 @@ dns:
     - https://doh.pub/dns-query
   fallback:
     - https://cloudflare-dns.com/dns-query
-    - https://doh.opendns.com/dns-query
     - https://dns.twnic.tw/dns-query
   fallback-filter:
     geoip: true
