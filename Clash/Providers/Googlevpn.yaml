@@ -7,3 +7,4 @@ payload:
   - DOMAIN,growth-pa.googleapis.com
   - DOMAIN,beryllium-pa.googleapis.com
   - DOMAIN-SUFFIX,userlocation.googleapis.com
+  - DOMAIN,connectivitycheck.gstatic.com
