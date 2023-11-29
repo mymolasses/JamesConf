@@ -1,6 +1,7 @@
 payload:
   - DOMAIN-SUFFIX,cloud.cupronickel.goog
   - DOMAIN,subscriptionsmobile-pa.googleapis.com
+  - DOMAIN,subscriptionsmanagement-pa.googleapis.com
   - DOMAIN,prod.brass.cloud.cupronickel.goog
   - DOMAIN,prod.zinc.cloud.cupronickel.goog
   - DOMAIN,phosphor-pa.googleapis.com
