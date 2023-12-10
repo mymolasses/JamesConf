@@ -1,3 +1,6 @@
+PROCESS-NAME,miaospeed.meta
+PROCESS-NAME,frpc
+
 DOMAIN,dns.cloudflare.com
 DOMAIN,dns.quad9.net
 DOMAIN,dns.adguard.com
