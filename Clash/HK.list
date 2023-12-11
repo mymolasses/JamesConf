@@ -1,5 +1,5 @@
 DOMAIN,xdaforums.com
-DOMAIN,www.xda-developers.com
+DOMAIN-SUFFIX,xda-developers.com
 IP-CIDR,52.5.96.96/32,no-resolve
 IP-CIDR,3.214.214.173/32,no-resolve
 
