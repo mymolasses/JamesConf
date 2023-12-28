@@ -53,19 +53,19 @@ dns:
   listen: 0.0.0.0:7874 #
   default-nameserver:
     - 114.114.114.114
-    - 8.8.8.8
+    - 1.0.0.1
     - tls://223.5.5.5:853
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
   fallback:
-    - https://cloudflare-dns.com/dns-query
+    - https://1.0.0.1/dns-query
     - https://dns.twnic.tw/dns-query
   fallback-filter:
     geoip: true
     geoip-code: CN
   nameserver-policy:
-    "*.tag-global-ddns.top": 9.9.9.9
+    "*.tag-global-ddns.top": 1.0.0.1
   
 
 
