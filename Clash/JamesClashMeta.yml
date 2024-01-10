@@ -42,6 +42,10 @@ hosts:
   mtalk.google.com: 108.177.125.188
   dl.google.com: 180.163.151.161
   dl.l.google.com: 180.163.151.161
+  bigota.d.miui.com: 47.74.196.250
+  hugeota.d.miui.com: 47.74.196.250
+  superota.d.miui.com: 47.74.196.250
+  ultimateota.d.miui.com: 47.74.196.250
 
 dns:
   enable: true
