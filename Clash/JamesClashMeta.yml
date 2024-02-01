@@ -13,7 +13,6 @@ log-level: debug
 tcp-concurrent: true
 external-controller: 0.0.0.0:9090
 
-
 profile: # 存储 select 选择记录
   store-selected: true
 
@@ -25,15 +24,12 @@ sniffer:
   - "+.nflxvideo.net"
   - "+.amazonaws.com"
   - "+.media.dssott.com"
-  - "+.starplus.com"
-  - "+.v2ex.com"
   sniff: # TLS 默认如果不配置 ports 默认嗅探 443
     TLS:
     #  ports: [443, 8443]
     
     # 默认嗅探 80
     HTTP: # 需要嗅探的端口
-      
       ports: [80, 8080-8880]
       # 可覆盖 sniffer.override-destination
       override-destination: true
@@ -42,10 +38,6 @@ hosts:
   mtalk.google.com: 108.177.125.188
   dl.google.com: 180.163.151.161
   dl.l.google.com: 180.163.151.161
-  bigota.d.miui.com: 47.74.196.250
-  hugeota.d.miui.com: 47.74.196.250
-  superota.d.miui.com: 47.74.196.250
-  ultimateota.d.miui.com: 47.74.196.250
 
 dns:
   enable: true
