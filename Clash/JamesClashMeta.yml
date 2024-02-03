@@ -65,6 +65,7 @@ dns:
     - https://doh.pub/dns-query
   fallback:
     - https://1.1.1.1/dns-query
+    - tls://8.8.8.8
     - https://101.101.101.101/dns-query
   fallback-filter:
     geoip: true
