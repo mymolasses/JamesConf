@@ -49,13 +49,14 @@ dns:
   default-nameserver:
     - 114.114.114.114
     - 1.0.0.1
-    - tls://223.5.5.5:853
+    - tls://223.5.5.5
   nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
+    - tls://dns.alidns.com
+    - tls://dot.pub
   fallback:
-    - https://1.0.0.1/dns-query
-    - https://dns.twnic.tw/dns-query
+    - tls://1.1.1.1
+    - tls://8.8.8.8
+    - https://101.101.101.101/dns-query
   fallback-filter:
     geoip: true
     geoip-code: CN
