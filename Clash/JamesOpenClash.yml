@@ -61,7 +61,7 @@ dns:
     geoip: true
     geoip-code: CN
   nameserver-policy:
-    "*.tag-global-ddns.top": 1.0.0.1
+    "*.tag-global-ddns.top": 1.1.1.1
   
 
 
