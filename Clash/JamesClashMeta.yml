@@ -51,20 +51,20 @@ dns:
   # fake-ip-range: 198.18.0.1/16
   nameserver-policy:
     "geosite:cn,private,apple":
-      - https://dns.alidns.com/dns-query
-      - https://doh.pub/dns-query
+      - tls://dns.alidns.com/dns-query
+      - tls://doh.pub/dns-query
     "geosite:gfw":
-      - https://1.1.1.1/dns-query
+      - tls://1.1.1.1/dns-query
       - https://101.101.101.101/dns-query
     "+.tag-global-ddns.top":
-      - https://1.1.1.1/dns-query
+      - tls://1.1.1.1/dns-query
   
   use-hosts: true
   nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
+    - tls://dns.alidns.com
+    - tls://dot.pub
   fallback:
-    - https://1.1.1.1/dns-query
+    - tls://1.1.1.1
     - tls://8.8.8.8
     - https://101.101.101.101/dns-query
   fallback-filter:
