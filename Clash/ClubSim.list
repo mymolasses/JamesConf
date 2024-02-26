@@ -6,3 +6,8 @@ DOMAIN,ss.epdg.epc.geo.mnc000.mcc454.pub.3gppnetwork.org
 DOMAIN,gspe1-ssl.ls.apple.com
 IP-CIDR,120.88.0.0/16
 
+# hmvod
+PROCESS-NAME,com.anyplex.hls.wish
+PROCESS-NAME,com.pccw.clubsim
+DOMAIN-SUFFIX,anyplex.com
+DOMAIN,api.onesignal.com
