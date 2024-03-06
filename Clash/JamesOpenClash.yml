@@ -50,6 +50,7 @@ dns:
     - tls://223.5.5.5
   nameserver:
     - https://doh.apad.pro/dns-query
+    - https://dns.twnic.tw/dns-query
 #  fallback:
 #    - tls://1.1.1.1
 #    - tls://8.8.8.8
