@@ -45,8 +45,7 @@ dns:
   prefer-h3: false # 开启 DoH 支持 HTTP/3，将并发尝试
   listen: 0.0.0.0:7874
   default-nameserver:
-    - 223.5.5.5
-    - 1.1.1.1
+    - 202.102.128.68
   ipv6: false
   # fake-ip-range: 198.18.0.1/16
   nameserver-policy:
@@ -61,15 +60,14 @@ dns:
   
   use-hosts: true
   nameserver:
-    - tls://dns.alidns.com
-    - tls://dot.pub
-  fallback:
-    - tls://1.1.1.1
-    - tls://8.8.8.8
-    - https://101.101.101.101/dns-query
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
+    - 202.102.128.68
+#  fallback:
+#    - tls://1.1.1.1
+#    - tls://8.8.8.8
+#    - https://101.101.101.101/dns-query
+#  fallback-filter:
+#    geoip: true
+#    geoip-code: CN
 
 cfw-latency-timeout: 3000
 cfw-latency-url: http://cp.cloudflare.com/generate_204
