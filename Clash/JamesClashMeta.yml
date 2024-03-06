@@ -61,6 +61,7 @@ dns:
   use-hosts: true
   nameserver:
     - https://doh.apad.pro/dns-query
+    - https://dns.twnic.tw/dns-query
 #  fallback:
 #    - tls://1.1.1.1
 #    - tls://8.8.8.8
