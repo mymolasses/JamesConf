@@ -58,14 +58,9 @@ dns:
 #    geoip: true
 #    geoip-code: CN
   nameserver-policy:
-    "geosite:cn,private,apple":
-      - tls://dns.alidns.com/dns-query
-      - tls://doh.pub/dns-query
-    "geosite:gfw":
-      - tls://1.1.1.1/dns-query
-      - https://101.101.101.101/dns-query
-    "+.tag-global-ddns.top":
-      - tls://1.1.1.1/dns-query
+    "geosite:cn,private,apple": 223.5.5.5
+    "geosite:gfw": 1.1.1.1
+    "*.tag-global-ddns.top": 1.1.1.1
   
 
 # 1. clash DNS 请求逻辑：
