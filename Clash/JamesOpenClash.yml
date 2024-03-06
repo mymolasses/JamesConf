@@ -48,22 +48,25 @@ dns:
   listen: 0.0.0.0:7874 #
   default-nameserver:
     - tls://223.5.5.5
-    - tls://1.1.1.1
-    - tls://8.8.8.8
   nameserver:
-    - tls://dns.alidns.com
-    - tls://dot.pub
-  fallback:
-    - tls://1.1.1.1
-    - tls://8.8.8.8
-    - https://101.101.101.101/dns-query
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
+    - https://doh.apad.pro/dns-query
+#  fallback:
+#    - tls://1.1.1.1
+#    - tls://8.8.8.8
+#    - https://101.101.101.101/dns-query
+#  fallback-filter:
+#    geoip: true
+#    geoip-code: CN
   nameserver-policy:
-    "*.tag-global-ddns.top": 1.1.1.1
+    "geosite:cn,private,apple":
+      - tls://dns.alidns.com/dns-query
+      - tls://doh.pub/dns-query
+    "geosite:gfw":
+      - tls://1.1.1.1/dns-query
+      - https://101.101.101.101/dns-query
+    "+.tag-global-ddns.top":
+      - tls://1.1.1.1/dns-query
   
-
 
 # 1. clash DNS 请求逻辑：
 #   (1) 当访问一个域名时， nameserver 与 fallback 列表内的所有服务器并发请求，得到域名对应的 IP 地址。
