@@ -45,7 +45,7 @@ dns:
   prefer-h3: false # 开启 DoH 支持 HTTP/3，将并发尝试
   listen: 0.0.0.0:7874
   default-nameserver:
-    - 202.102.128.68
+    - 223.5.5.5
   ipv6: false
   # fake-ip-range: 198.18.0.1/16
   nameserver-policy:
@@ -60,7 +60,7 @@ dns:
   
   use-hosts: true
   nameserver:
-    - 202.102.128.68
+    - https://doh.apad.pro/dns-query
 #  fallback:
 #    - tls://1.1.1.1
 #    - tls://8.8.8.8
