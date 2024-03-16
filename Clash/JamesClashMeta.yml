@@ -50,7 +50,7 @@ dns:
   # fake-ip-range: 198.18.0.1/16
   nameserver-policy:
     "geosite:cn,private,apple":
-      - tls://223.5.5.5
+      - 168.95.192.1
       - tls://119.29.29.29
     "geosite:gfw":
       - tls://security.cloudflare-dns.com
@@ -63,6 +63,7 @@ dns:
   nameserver:
     - https://doh.apad.pro/dns-query
     - https://dns.twnic.tw/dns-query
+    - 168.95.192.1
 #  fallback:
 #    - tls://1.1.1.1
 #    - tls://8.8.8.8
