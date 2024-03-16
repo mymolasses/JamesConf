@@ -53,9 +53,9 @@ dns:
       - tls://223.5.5.5
       - 168.95.192.1
     "geosite:gfw":
-      - tls://security.cloudflare-dns.com
-      - https://101.101.101.101/dns-query
       - 168.95.192.1
+      - tls://1.1.1.1
+      - https://101.101.101.101/dns-query
     "+.tag-global-ddns.top":
       - tls://1.1.1.1
   
