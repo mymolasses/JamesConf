@@ -42,16 +42,16 @@ hosts:
 dns:
   enable: true
   enhanced-mode: redir-host
-  prefer-h3: false # 开启 DoH 支持 HTTP/3，将并发尝试
+  prefer-h3: true # 开启 DoH 支持 HTTP/3，将并发尝试
   listen: 0.0.0.0:7874
   default-nameserver:
-    - 223.5.5.5
+    - tls://223.5.5.5
   ipv6: false
   # fake-ip-range: 198.18.0.1/16
   nameserver-policy:
     "geosite:cn,private,apple":
+      - tls://223.5.5.5
       - 168.95.192.1
-      - tls://119.29.29.29
     "geosite:gfw":
       - tls://security.cloudflare-dns.com
       - https://101.101.101.101/dns-query
