@@ -45,13 +45,13 @@ dns:
   prefer-h3: true # 开启 DoH 支持 HTTP/3，将并发尝试
   listen: 0.0.0.0:7874
   default-nameserver:
-    - tls://223.5.5.5
+    - 223.5.5.5
   ipv6: false
   # fake-ip-range: 198.18.0.1/16
   nameserver-policy:
     "geosite:cn,private,apple":
-      - tls://223.5.5.5
-      - 168.95.192.1
+      - https://dns.alidns.com/dns-query
+      - https://doh.pub/dns-query
     "geosite:gfw":
       - 168.95.192.1
       - tls://1.1.1.1
@@ -62,7 +62,6 @@ dns:
   use-hosts: true
   nameserver:
     - https://doh.apad.pro/dns-query
-    - https://dns.twnic.tw/dns-query
     - 168.95.192.1
 #  fallback:
 #    - tls://1.1.1.1
