@@ -50,7 +50,6 @@ dns:
     - tls://223.5.5.5
   nameserver:
     - https://doh.apad.pro/dns-query
-    - https://dns.twnic.tw/dns-query
     - 168.95.192.1
 #  fallback:
 #    - tls://1.1.1.1
@@ -61,7 +60,7 @@ dns:
 #    geoip-code: CN
   nameserver-policy:
     "geosite:cn,private,apple": 223.5.5.5
-    "geosite:gfw": 1.1.1.2
+    "geosite:gfw": 1.1.1.1
     "*.tag-global-ddns.top": 1.1.1.1
   
 
