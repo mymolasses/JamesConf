@@ -50,7 +50,7 @@ dns:
   # fake-ip-range: 198.18.0.1/16
   nameserver-policy:
     "geosite:cn,private,apple":
-      - https://dns.alidns.com/dns-query
+      - https://dns.alidns.com/dns-query#h3=true
       - https://doh.pub/dns-query
     "geosite:gfw":
       - 168.95.192.1
