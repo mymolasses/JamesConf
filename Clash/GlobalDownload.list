@@ -11,8 +11,6 @@ DOMAIN-SUFFIX,sourceforge.net
 
 DOMAIN-SUFFIX,androidfilehost.com
 
-DOMAIN,dl.pixelexperience.org
-
 PROCESS-NAME,wget-ssl
 
 
@@ -54,7 +52,6 @@ IP-CIDR6,2a0b:e44:1::/48,no-resolve
 IP-CIDR6,2a0b:e45:1::/48,no-resolve
 PROCESS-NAME,mega.privacy.android.app
 
-DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,githubusercontent.com
 
 DOMAIN-SUFFIX,jetbrains.com
