@@ -74,10 +74,10 @@ dns:
     #- https://doh.apad.pro/dns-query
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
-#  fallback:
-#    - tls://1.1.1.1
-#    - tls://8.8.8.8
-#    - https://101.101.101.101/dns-query
+  fallback:
+    - tls://1.1.1.1
+    - tls://8.8.8.8
+    - https://101.101.101.101/dns-query
 #  fallback-filter:
 #    geoip: true
 #    geoip-code: CN
