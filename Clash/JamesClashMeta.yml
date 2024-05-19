@@ -71,8 +71,9 @@ dns:
   
   use-hosts: true
   nameserver:
-    - https://doh.apad.pro/dns-query
-    - 168.95.192.1
+    #- https://doh.apad.pro/dns-query
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
 #  fallback:
 #    - tls://1.1.1.1
 #    - tls://8.8.8.8
