@@ -49,12 +49,12 @@ dns:
   default-nameserver:
     - tls://223.5.5.5
   nameserver:
-    - https://doh.apad.pro/dns-query
-    - 168.95.192.1
-#  fallback:
-#    - tls://1.1.1.1
-#    - tls://8.8.8.8
-#    - https://101.101.101.101/dns-query
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  fallback:
+    - tls://1.1.1.1
+    - tls://8.8.8.8
+    - https://101.101.101.101/dns-query
 #  fallback-filter:
 #    geoip: true
 #    geoip-code: CN
