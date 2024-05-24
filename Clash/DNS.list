@@ -1,6 +1,10 @@
 PROCESS-NAME,miaospeed.meta
 PROCESS-NAME,frpc
 
+DOMAIN,pub1cf.emby.wtf
+DOMAIN,pub2cf.emby.wtf
+DOMAIN,pub3cf.emby.wtf
+
 DOMAIN,dns.cloudflare.com
 DOMAIN,dns.quad9.net
 DOMAIN,dns.adguard.com
