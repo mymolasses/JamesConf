@@ -58,11 +58,10 @@ dns:
   ipv6: false
   # fake-ip-range: 198.18.0.1/16
   nameserver-policy:
-    "geosite:cn,private,apple":
+    "geosite:cn,private,apple,bilibili":
       - https://dns.alidns.com/dns-query#h3=true
       - https://doh.pub/dns-query
     "geosite:gfw":
-      - 168.95.192.1
       - tls://1.1.1.1
       - https://101.101.101.101/dns-query
 #    "geosite:category-ads-all": rcode://success
