@@ -3,9 +3,7 @@ DOMAIN,porn.aca.best
 DOMAIN,pub1.emby.wtf
 DOMAIN,push-kr.misakaf.org
 DOMAIN,cf.jmsooo.com
-DOMAIN,stream1.misakaf.org
-DOMAIN,stream2.misakaf.org
-DOMAIN,stream3.misakaf.org
+DOMAIN-SUFFIX,misakaf.org
 IP-CIDR,5.78.86.228/32 
 IP-CIDR,5.78.78.136/32
 IP-CIDR,5.78.103.111/32
