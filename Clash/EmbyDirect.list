@@ -20,7 +20,7 @@ IP-CIDR,9.9.9.9/32,no-resolve
 
 
 # DOMAIN,cf2.misakaf.org
-DOMAIN-SUFFIX,mypikpak.com
+# DOMAIN-SUFFIX,mypikpak.com
 IP-CIDR,162.219.87.156/32,no-resolve
 DOMAIN,www.jrskan.com
 DOMAIN-SUFFIX,mm2022.top
