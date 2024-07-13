@@ -14,6 +14,7 @@ DOMAIN,rcv5-sp.mypikpak.com
 DOMAIN,hub5pr.mypikpak.com
 DOMAIN,hub5pn.mypikpak.com
 DOMAIN,sg-thumbnail-drive.mypikpak.com
+DOMAIN-SUFFIX,mypikpak.com
 DOMAIN,app.adjust.com
 
 DOMAIN,sub.xeton.dev
